@@ -78,8 +78,36 @@
       margin: 16px 0;
     }
     .highlight p { margin: 0; color: #c4b5fd; font-weight: 500; }
+    .warning {
+      background: #1e1a0e;
+      border-left: 3px solid #f59e0b;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin: 16px 0;
+    }
+    .warning p { margin: 0; color: #fcd34d; font-weight: 500; }
     a { color: #7c6af7; text-decoration: none; }
     a:hover { text-decoration: underline; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 16px;
+      font-size: 14px;
+    }
+    th {
+      text-align: left;
+      color: #888;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-bottom: 1px solid #2a2a2a;
+    }
+    td {
+      color: #bbb;
+      padding: 10px 12px;
+      border-bottom: 1px solid #1e1e1e;
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
     .footer {
       margin-top: 56px;
       padding-top: 24px;
@@ -94,8 +122,8 @@
 <div class="container">
 
   <div class="lang-switcher">
-    <button class="lang-btn active" onclick="setLang('tr')">Türkçe</button>
-    <button class="lang-btn" onclick="setLang('en')">English</button>
+    <button class="lang-btn active" onclick="setLang('tr', event)">Türkçe</button>
+    <button class="lang-btn" onclick="setLang('en', event)">English</button>
   </div>
 
   <!-- TÜRKÇE -->
@@ -109,35 +137,96 @@
     </div>
 
     <h1>Gizlilik Politikası</h1>
-    <p class="updated">Son güncelleme: 22 Mart 2025</p>
+    <p class="updated">Son güncelleme: 27 Mart 2026</p>
 
     <div class="highlight">
-      <p>ZikirMatik Pro hiçbir kişisel verinizi sunucuya göndermez veya üçüncü taraflarla paylaşmaz. Tüm veriler yalnızca cihazınızda saklanır.</p>
+      <p>ZikirMatik Pro, kişisel verilerinizi satmaz veya reklam amaçlı kullanmaz. Sayım geçmişiniz, zikir listeniz ve tercihleriniz yalnızca cihazınızda saklanır.</p>
     </div>
 
-    <h2>Toplanan Veriler</h2>
-    <p>Uygulama, aşağıdaki verileri yalnızca <strong>cihazınızda</strong> saklar:</p>
+    <h2>Cihazda Saklanan Veriler</h2>
+    <p>Aşağıdaki veriler <strong>yalnızca cihazınızda</strong> saklanır, herhangi bir sunucuya gönderilmez:</p>
     <ul>
       <li>Zikir listesi ve özelleştirmeleriniz</li>
       <li>Sayım geçmişi ve oturum kayıtları</li>
       <li>Uygulama ayarları (tema, titreşim, bildirim tercihleri)</li>
     </ul>
-    <p>Bu veriler internet üzerinden hiçbir yere iletilmez.</p>
+
+    <h2>Kilitlenme Raporlaması (Firebase Crashlytics)</h2>
+    <div class="warning">
+      <p>Uygulama beklenmedik şekilde kapandığında anonim bir hata raporu Google Firebase sunucularına iletilir.</p>
+    </div>
+    <p>Bu rapor aşağıdaki bilgileri içerir:</p>
+    <ul>
+      <li>Cihaz modeli ve üreticisi</li>
+      <li>Android sürümü ve uygulama sürümü</li>
+      <li>Kilitlenme anındaki teknik hata izi (stack trace)</li>
+      <li>Anonim Firebase Kurulum Kimliği</li>
+    </ul>
+    <p>Bu veriler kişisel kimlik bilgisi içermez, üçüncü taraflarla paylaşılmaz ve yalnızca hata düzeltme amacıyla kullanılır. Firebase'in gizlilik politikasına <a href="https://firebase.google.com/support/privacy" target="_blank">buradan</a> ulaşabilirsiniz.</p>
 
     <h2>İzinler</h2>
-    <ul>
-      <li><strong>Konum (yaklaşık):</strong> Kıble yönünü hesaplamak için yalnızca uygulama açıkken kullanılır. Konumunuz kaydedilmez veya paylaşılmaz.</li>
-      <li><strong>Bildirim:</strong> Günlük hadis hatırlatması göndermek için. İsteğe bağlıdır, ayarlardan kapatılabilir.</li>
-    </ul>
+    <table>
+      <tr>
+        <th>İzin</th>
+        <th>Kullanım Amacı</th>
+      </tr>
+      <tr>
+        <td><strong>Yaklaşık Konum</strong></td>
+        <td>Kıble yönü hesaplama — yalnızca uygulama açıkken, sunucuya gönderilmez</td>
+      </tr>
+      <tr>
+        <td><strong>Hassas Konum</strong></td>
+        <td>Daha doğru kıble hesaplama — yalnızca uygulama açıkken, sunucuya gönderilmez</td>
+      </tr>
+      <tr>
+        <td><strong>Bildirim Gönderme</strong></td>
+        <td>Günlük hadis hatırlatıcısı — isteğe bağlı, ayarlardan kapatılabilir</td>
+      </tr>
+      <tr>
+        <td><strong>Önyükleme Alımı</strong></td>
+        <td>Cihaz yeniden başlatıldığında bildirim zamanlamasını geri yüklemek için</td>
+      </tr>
+      <tr>
+        <td><strong>Tam Zamanlı Alarm</strong></td>
+        <td>Günlük hadis bildiriminin tam saatinde gönderilmesi için</td>
+      </tr>
+      <tr>
+        <td><strong>Titreşim</strong></td>
+        <td>Zikir sayımında titreşim geri bildirimi</td>
+      </tr>
+      <tr>
+        <td><strong>İnternet</strong></td>
+        <td>Yalnızca Firebase Crashlytics hata raporlaması için kullanılır</td>
+      </tr>
+    </table>
 
     <h2>Üçüncü Taraf Hizmetler</h2>
-    <p>Uygulama herhangi bir analitik araç, reklam ağı veya harici servis kullanmaz.</p>
+    <table>
+      <tr>
+        <th>Hizmet</th>
+        <th>Amaç</th>
+        <th>Gizlilik Politikası</th>
+      </tr>
+      <tr>
+        <td>Firebase Crashlytics (Google)</td>
+        <td>Anonim hata raporlaması</td>
+        <td><a href="https://firebase.google.com/support/privacy" target="_blank">Bağlantı</a></td>
+      </tr>
+    </table>
+    <p>Reklam ağı, analitik platformu veya başka harici hizmet kullanılmamaktadır.</p>
 
     <h2>Veri Silme</h2>
-    <p>Uygulamayı cihazınızdan kaldırdığınızda tüm veriler otomatik olarak silinir. Uygulama içinden de geçmiş kayıtlarınızı silebilirsiniz.</p>
+    <ul>
+      <li>Uygulamayı kaldırdığınızda cihazda saklanan tüm veriler otomatik olarak silinir</li>
+      <li>Crashlytics verileri Google'ın politikasına göre saklanır (yaklaşık 90 gün)</li>
+      <li>Sayım geçmişi ve kayıtlar uygulama içinden manuel olarak silinebilir</li>
+    </ul>
+
+    <h2>Çocukların Gizliliği</h2>
+    <p>Bu uygulama 13 yaşın altındaki çocuklardan bilerek veri toplamaz.</p>
 
     <h2>Değişiklikler</h2>
-    <p>Bu politikada yapılacak değişiklikler bu sayfa üzerinden duyurulacaktır.</p>
+    <p>Bu politika güncellendiğinde bu sayfa yenilenir. Uygulamayı kullanmaya devam etmek güncel politikayı kabul etmek anlamına gelir.</p>
 
     <h2>İletişim</h2>
     <p>Sorularınız için: <a href="mailto:tutalgokay@gmail.com">tutalgokay@gmail.com</a></p>
@@ -154,48 +243,109 @@
     </div>
 
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: March 22, 2025</p>
+    <p class="updated">Last updated: March 27, 2026</p>
 
     <div class="highlight">
-      <p>ZikirMatik Pro does not send any personal data to servers or share it with third parties. All data is stored exclusively on your device.</p>
+      <p>ZikirMatik Pro does not sell or use your personal data for advertising. Your counting history, dhikr list, and preferences are stored exclusively on your device.</p>
     </div>
 
-    <h2>Data We Collect</h2>
-    <p>The app stores the following data <strong>on your device only</strong>:</p>
+    <h2>On-Device Data</h2>
+    <p>The following data is stored <strong>on your device only</strong> and is never sent to any server:</p>
     <ul>
       <li>Your dhikr list and customizations</li>
       <li>Count history and session records</li>
       <li>App settings (theme, vibration, notification preferences)</li>
     </ul>
-    <p>None of this data is transmitted over the internet.</p>
+
+    <h2>Crash Reporting (Firebase Crashlytics)</h2>
+    <div class="warning">
+      <p>When the app crashes unexpectedly, an anonymous error report is sent to Google Firebase servers.</p>
+    </div>
+    <p>This report contains the following information:</p>
+    <ul>
+      <li>Device model and manufacturer</li>
+      <li>Android version and app version</li>
+      <li>Technical stack trace at the time of crash</li>
+      <li>Anonymous Firebase Installation ID</li>
+    </ul>
+    <p>This data contains no personally identifiable information, is not shared with third parties, and is used solely for bug fixing. You can review Firebase's privacy policy <a href="https://firebase.google.com/support/privacy" target="_blank">here</a>.</p>
 
     <h2>Permissions</h2>
-    <ul>
-      <li><strong>Location (approximate):</strong> Used only while the app is open to calculate Qibla direction. Your location is never stored or shared.</li>
-      <li><strong>Notifications:</strong> Used to send the daily hadith reminder. Optional — can be disabled in settings.</li>
-    </ul>
+    <table>
+      <tr>
+        <th>Permission</th>
+        <th>Purpose</th>
+      </tr>
+      <tr>
+        <td><strong>Approximate Location</strong></td>
+        <td>Qibla direction calculation — only while app is active, never stored remotely</td>
+      </tr>
+      <tr>
+        <td><strong>Precise Location</strong></td>
+        <td>More accurate qibla calculation — only while app is active, never stored remotely</td>
+      </tr>
+      <tr>
+        <td><strong>Post Notifications</strong></td>
+        <td>Daily hadith reminder — optional, can be disabled in settings</td>
+      </tr>
+      <tr>
+        <td><strong>Receive Boot Completed</strong></td>
+        <td>Restore notification schedule after device restart</td>
+      </tr>
+      <tr>
+        <td><strong>Schedule Exact Alarm</strong></td>
+        <td>Deliver daily hadith notification at the precise configured time</td>
+      </tr>
+      <tr>
+        <td><strong>Vibrate</strong></td>
+        <td>Haptic feedback during dhikr counting</td>
+      </tr>
+      <tr>
+        <td><strong>Internet</strong></td>
+        <td>Used exclusively for Firebase Crashlytics crash reporting</td>
+      </tr>
+    </table>
 
     <h2>Third-Party Services</h2>
-    <p>The app does not use any analytics tools, ad networks, or external services.</p>
+    <table>
+      <tr>
+        <th>Service</th>
+        <th>Purpose</th>
+        <th>Privacy Policy</th>
+      </tr>
+      <tr>
+        <td>Firebase Crashlytics (Google)</td>
+        <td>Anonymous crash reporting</td>
+        <td><a href="https://firebase.google.com/support/privacy" target="_blank">Link</a></td>
+      </tr>
+    </table>
+    <p>No advertising networks, analytics platforms, or other external services are used.</p>
 
     <h2>Data Deletion</h2>
-    <p>Uninstalling the app from your device deletes all data automatically. You can also delete session history from within the app.</p>
+    <ul>
+      <li>Uninstalling the app automatically deletes all on-device data</li>
+      <li>Crashlytics data is retained per Google's policy (approximately 90 days)</li>
+      <li>Counting history and records can be manually deleted within the app</li>
+    </ul>
+
+    <h2>Children's Privacy</h2>
+    <p>This application does not knowingly collect data from children under 13.</p>
 
     <h2>Changes</h2>
-    <p>Any changes to this policy will be announced on this page.</p>
+    <p>When this policy is updated, this page will be revised. Continued use of the app constitutes acceptance of the current policy.</p>
 
     <h2>Contact</h2>
     <p>For questions: <a href="mailto:tutalgokay@gmail.com">tutalgokay@gmail.com</a></p>
   </div>
 
   <div class="footer">
-    &copy; 2025 ZikirMatik Pro · <a href="mailto:tutalgokay@gmail.com">tutalgokay@gmail.com</a>
+    &copy; 2026 ZikirMatik Pro &middot; <a href="mailto:tutalgokay@gmail.com">tutalgokay@gmail.com</a>
   </div>
 
 </div>
 
 <script>
-  function setLang(lang) {
+  function setLang(lang, event) {
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
     document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
     document.getElementById('section-' + lang).classList.add('active');
