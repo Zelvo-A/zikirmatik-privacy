@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZikirMatik – Hatim Grubuna Katıl</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0f0f0f;
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .card {
+      background: #1c1c1e;
+      border-radius: 20px;
+      padding: 40px 32px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+    .logo {
+      font-size: 48px;
+      margin-bottom: 8px;
+    }
+    .app-name {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .subtitle {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 32px;
+    }
+    .invite-label {
+      font-size: 13px;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .invite-code {
+      font-size: 40px;
+      font-weight: 800;
+      letter-spacing: 8px;
+      color: #6650A4;
+      background: #2a2a2e;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 32px;
+      font-variant-numeric: tabular-nums;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      border-radius: 14px;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      margin-bottom: 12px;
+      transition: opacity 0.15s;
+    }
+    .btn:hover { opacity: 0.88; }
+    .btn-primary {
+      background: #6650A4;
+      color: #fff;
+    }
+    .btn-secondary {
+      background: #2a2a2e;
+      color: #ccc;
+      border: 1px solid #3a3a3e;
+    }
+    .divider {
+      color: #555;
+      font-size: 13px;
+      margin: 8px 0 16px;
+    }
+    .manual-note {
+      font-size: 13px;
+      color: #666;
+      margin-top: 20px;
+      line-height: 1.5;
+    }
+    .no-code {
+      color: #ff6b6b;
+      font-size: 16px;
+      margin: 20px 0;
+    }
+    #status {
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 16px;
+      min-height: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">🕌</div>
+    <div class="app-name">ZikirMatik</div>
+    <div class="subtitle">Hatim Grubuna Davet</div>
+
+    <div id="main-content">
+      <div class="invite-label">Davet Kodu</div>
+      <div class="invite-code" id="code-display">------</div>
+      <div id="status"></div>
+      <button class="btn btn-primary" id="open-btn" onclick="tryOpenApp()">
+        📱 Uygulamada Aç
+      </button>
+      <div class="divider">— veya —</div>
+      <a class="btn btn-secondary" id="store-btn"
+         href="https://play.google.com/store/apps/details?id=com.gokay.zikirmatik">
+        ⬇️ ZikirMatik'i İndir
+      </a>
+      <div class="manual-note">
+        Uygulamayı indirdikten sonra<br>
+        <strong>Hatim Organizasyonu → Gruba Katıl</strong><br>
+        ekranına gidin ve kodu girin.
+      </div>
+    </div>
+
+    <div id="no-code-content" style="display:none">
+      <div class="no-code">Geçersiz davet linki.</div>
+      <a class="btn btn-secondary"
+         href="https://play.google.com/store/apps/details?id=com.gokay.zikirmatik">
+        ZikirMatik'i İndir
+      </a>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var code = (params.get('code') || '').toUpperCase().trim();
+
+      if (!code || code.length < 4) {
+        document.getElementById('main-content').style.display = 'none';
+        document.getElementById('no-code-content').style.display = 'block';
+        return;
+      }
+
+      document.getElementById('code-display').textContent = code;
+
+      // Update Play Store link to keep code as reference (not auto-filled — just informational)
+      var storeBtn = document.getElementById('store-btn');
+      storeBtn.href = 'https://play.google.com/store/apps/details?id=com.gokay.zikirmatik';
+
+      // Auto-attempt to open app 600ms after page load (give time to render)
+      var appUrl = 'zikirmatik://hatim/join/' + code;
+      var attempted = false;
+
+      function tryOpenApp() {
+        if (attempted) return;
+        attempted = true;
+        document.getElementById('status').textContent = 'Uygulama açılıyor…';
+
+        var iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = appUrl;
+        document.body.appendChild(iframe);
+
+        // If page is still visible after 2s → app not installed
+        var t = setTimeout(function () {
+          document.getElementById('status').textContent =
+            'Uygulama bulunamadı. Önce yükleyin.';
+          storeBtn.style.background = '#6650A4';
+          storeBtn.style.color = '#fff';
+          storeBtn.style.borderColor = 'transparent';
+          storeBtn.textContent = '⬇️ ZikirMatik\'i İndir';
+        }, 2000);
+
+        // Blur = app opened
+        window.addEventListener('blur', function () {
+          clearTimeout(t);
+          document.getElementById('status').textContent = '✓ Uygulama açıldı!';
+        }, { once: true });
+      }
+
+      // Auto-open on load
+      window.addEventListener('load', function () {
+        setTimeout(tryOpenApp, 600);
+      });
+    })();
+  </script>
+</body>
+</html>
