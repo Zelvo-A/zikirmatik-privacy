@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.gokay.zikirmatik",
+      "sha256_cert_fingerprints": [
+        "EE:76:53:22:51:0A:80:09:A5:F0:A7:D3:90:A6:DF:7B:EB:3E:B0:EA:76:00:C2:FC:10:9A:FD:6E:9E:02:8D:A9"
+      ]
+    }
+  }
+]

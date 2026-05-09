@@ -152,40 +152,41 @@
 
       document.getElementById('code-display').textContent = code;
 
-      // Update Play Store link to keep code as reference (not auto-filled — just informational)
       var storeBtn = document.getElementById('store-btn');
-      storeBtn.href = 'https://play.google.com/store/apps/details?id=com.gokay.zikirmatik';
-
-      // Auto-attempt to open app 600ms after page load (give time to render)
-      var appUrl = 'zikirmatik://hatim/join/' + code;
-      var attempted = false;
+      var statusEl = document.getElementById('status');
+      var PACKAGE = 'com.gokay.zikirmatik';
+      var STORE_URL = 'https://play.google.com/store/apps/details?id=' + PACKAGE;
+      var customUrl = 'zikirmatik://hatim/join/' + code;
+      // intent:// works in Chrome/Android without assetlinks — falls back to Play Store automatically
+      var intentUrl = 'intent://hatim/join/' + code
+        + '#Intent;scheme=zikirmatik;package=' + PACKAGE
+        + ';S.browser_fallback_url=' + encodeURIComponent(STORE_URL)
+        + ';end';
+      var isAndroid = /android/i.test(navigator.userAgent);
 
       function tryOpenApp() {
-        if (attempted) return;
-        attempted = true;
-        document.getElementById('status').textContent = 'Uygulama açılıyor…';
+        statusEl.textContent = 'Uygulama açılıyor…';
 
-        var iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-        iframe.src = appUrl;
-        document.body.appendChild(iframe);
+        var notInstalledTimer = setTimeout(function () {
+          if (document.hasFocus()) {
+            statusEl.textContent = 'Uygulama bulunamadı. Önce yükleyin.';
+            storeBtn.style.background = '#6650A4';
+            storeBtn.style.color = '#fff';
+            storeBtn.style.borderColor = 'transparent';
+            storeBtn.textContent = '⬇️ ZikirMatik\'i İndir';
+          }
+        }, 2500);
 
-        // If page is still visible after 2s → app not installed
-        var t = setTimeout(function () {
-          document.getElementById('status').textContent =
-            'Uygulama bulunamadı. Önce yükleyin.';
-          storeBtn.style.background = '#6650A4';
-          storeBtn.style.color = '#fff';
-          storeBtn.style.borderColor = 'transparent';
-          storeBtn.textContent = '⬇️ ZikirMatik\'i İndir';
-        }, 2000);
-
-        // Blur = app opened
         window.addEventListener('blur', function () {
-          clearTimeout(t);
-          document.getElementById('status').textContent = '✓ Uygulama açıldı!';
+          clearTimeout(notInstalledTimer);
+          statusEl.textContent = '✓ Uygulama açıldı!';
         }, { once: true });
+
+        // intent:// on Android Chrome: deeplinks directly, falls back to Play Store if not installed
+        location.href = isAndroid ? intentUrl : customUrl;
       }
+
+      document.getElementById('open-btn').onclick = tryOpenApp;
 
       // Auto-open on load
       window.addEventListener('load', function () {
