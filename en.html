@@ -32,10 +32,10 @@
       <strong>Summary:</strong> ZikirMatik Pro does not sell your personal data, does not collect your email/phone/real name, and does not require account creation. In standalone use, all your data stays on your device. When you use the Group Dhikr feature, only group-related data (nickname, group name, task counters) is processed securely on Firebase Firestore. Ad and crash telemetry is anonymous.
     </div>
 
-    <h2>1. Data Controller</h2>
+    <h2>1. Data Controller</h2>
     <p>This app is developed and published by Gökay Tutal (zelvoai@gmail.com). As the data controller, compliance with KVKK / GDPR / Google Play Developer Program policies is committed.</p>
 
-    <h2>2. Data We Collect and Where It Is Stored</h2>
+    <h2>2. Data We Collect and Where It Is Stored</h2>
 
     <h3>2.1 Data Stored Only On Your Device</h3>
     <p>This data is not sent to any server and is kept only on your device in the Room database and DataStore:</p>
@@ -90,17 +90,13 @@
     <h3>2.6 Purchases (Google Play Billing)</h3>
     <p>Premium subscription is processed through Google Play Billing. ZikirMatik <strong>does not see or store</strong> your card number or payment information. The purchase outcome (premium active/not) is verified with a token received from Google Play. The premium status per device is stored in the <code>users/{uid}/isPremium</code> field in Firestore.</p>
 
-    <h2>3. Location Data (Qibla Only)</h2>
-    <p>Coarse and fine location are used when you open the Qibla compass. The location is only used on your device for calculation; <strong>it is never sent to any server and is not stored</strong>.</p>
-
-    <h2>4. Camera Data (QR Scan Only)</h2>
+    <h2>3. Camera Data (QR Scan Only)</h2>
     <p>The camera opens when you want to scan a QR invite code. The image from the camera is <strong>processed in real time on the device, not saved, and not sent outside</strong>. Only the text of the QR code is read.</p>
 
-    <h2>5. Permissions</h2>
+    <h2>4. Permissions</h2>
     <div class="table-wrap"><table>
       <tr><th>Permission</th><th>Purpose</th><th>Sent off device?</th></tr>
       <tr><td>INTERNET</td><td>Communication with Firebase, AdMob, Cloud Functions</td><td>Yes (data listed above)</td></tr>
-      <tr><td>ACCESS_FINE_LOCATION / COARSE_LOCATION</td><td>Qibla direction calculation</td><td>No</td></tr>
       <tr><td>CAMERA</td><td>Joining a group via QR code</td><td>No</td></tr>
       <tr><td>POST_NOTIFICATIONS</td><td>Daily hadith and counting notifications</td><td>No</td></tr>
       <tr><td>VIBRATE</td><td>Haptic feedback while counting</td><td>No</td></tr>
@@ -110,7 +106,7 @@
       <tr><td>com.google.android.gms.permission.AD_ID</td><td>AdMob ad ID access</td><td>Yes (to AdMob only)</td></tr>
     </table></div>
 
-    <h2>6. What We Do — Brief Description</h2>
+    <h2>5. What We Do — Brief Description</h2>
     <ul>
       <li><strong>Counting:</strong> Tap counts are written to the local database; every 10 taps, an anonymous global statistics counter is updated.</li>
       <li><strong>Creating a Khatm Group:</strong> A transaction runs through a Cloud Function; the group and invite code are written to Firestore; your anonymous UID is marked as the group admin.</li>
@@ -121,7 +117,7 @@
       <li><strong>Boosting capacity by watching an ad:</strong> When a rewarded ad completes, the Cloud Function boosts group capacity by +5 (repeatable within 24 hours).</li>
     </ul>
 
-    <h2>7. Third-Party Services</h2>
+    <h2>6. Third-Party Services</h2>
     <ul>
       <li><a href="https://firebase.google.com/support/privacy">Firebase (Analytics, Crashlytics, Auth, Firestore, Cloud Functions, App Check)</a></li>
       <li><a href="https://policies.google.com/privacy">Google AdMob</a></li>
@@ -129,7 +125,7 @@
       <li><a href="https://policies.google.com/privacy">Google User Messaging Platform (UMP)</a></li>
     </ul>
 
-    <h2>8. Data Retention Period and Your Right to Deletion</h2>
+    <h2>7. Data Retention Period and Your Right to Deletion</h2>
     <ul>
       <li><strong>Device data:</strong> Deleted when you uninstall the app.</li>
       <li><strong>Counting history:</strong> Can be deleted manually from within the app.</li>
@@ -139,10 +135,10 @@
       <li><strong>Global statistics:</strong> Stored indefinitely as they are not personally identifiable (aggregate only).</li>
     </ul>
 
-    <h2>9. Children's Privacy</h2>
+    <h2>8. Children's Privacy</h2>
     <p>The app is not intended for children under 13. It does not require account creation or collect personal data, so it is not in a risky category under COPPA / GDPR-K. If you believe a child has sent data, please notify us by email; we will delete it.</p>
 
-    <h2>10. Data Security</h2>
+    <h2>9. Data Security</h2>
     <ul>
       <li>Firebase communications are TLS 1.2+ encrypted.</li>
       <li>Firestore Security Rules enforce that each member can only read groups they belong to.</li>
@@ -151,10 +147,10 @@
       <li>Premium capacity boost and rewarded ad operations are protected with rate limiting + cooldown.</li>
     </ul>
 
-    <h2>11. Changes to this Policy</h2>
+    <h2>10. Changes to this Policy</h2>
     <p>If this policy is updated, the "Last updated" date on this page is changed. For significant changes, we show an in-app notice.</p>
 
-    <h2>12. Contact and Your KVKK / GDPR Rights</h2>
+    <h2>11. Contact and Your KVKK / GDPR Rights</h2>
     <p>You have the following rights: access, rectification, deletion, restriction of processing, data portability, objection. For your requests:</p>
     <p><a href="mailto:zelvoai@gmail.com">zelvoai@gmail.com</a></p>
   </div>

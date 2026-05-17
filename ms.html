@@ -31,61 +31,16 @@
       <strong>Ringkasan:</strong> ZikirMatik Pro tidak menjual data peribadi anda, tidak mengumpul e-mel/telefon/nama sebenar, dan tidak memerlukan penciptaan akaun. Dalam penggunaan individu, semua data anda kekal pada peranti. Apabila menggunakan ciri Zikir Berkumpulan, hanya data kumpulan (nama samaran, nama kumpulan, pembilang) diproses dengan selamat pada Firebase Firestore. Telemetri iklan dan crash adalah tanpa nama.
     </div>
 
-    <h2>1. Pengawal Data</h2>
+    <h2>1. Pengawal Data</h2>
     <p>Aplikasi ini dibangunkan dan diterbitkan oleh Gökay Tutal (zelvoai@gmail.com). Pematuhan GDPR / Polisi Program Pembangun Google Play.</p>
 
-    <h2>2. Data yang Kami Kumpul dan Lokasi Penyimpanan</h2>
-
-    <h3>2.1 Data Disimpan Hanya pada Peranti Anda</h3>
-    <ul>
-      <li>Senarai zikir, zikir tersuai, dan sasaran</li>
-      <li>Sejarah pengiraan dan rekod sesi</li>
-      <li>Tetapan: tema, bahasa, fon, bunyi/getar, masa notifikasi</li>
-      <li>Status persetujuan onboarding dan dasar</li>
-      <li>Status pengesahan pembelian Premium tempatan</li>
-    </ul>
-
-    <h3>2.2 Analitik Tanpa Nama (Firebase)</h3>
-    <ul>
-      <li><strong>Firebase Analytics:</strong> Skrin dilihat, peristiwa penggunaan. Tiada data peribadi.</li>
-      <li><strong>Firebase Crashlytics:</strong> Jejak crash, model peranti, versi Android, Installation ID tanpa nama.</li>
-      <li><strong>Firebase App Check:</strong> Mengesahkan panggilan pelayan dari peranti/aplikasi sah.</li>
-    </ul>
-
-    <h3>2.3 Statistik Global Tanpa Nama</h3>
-    <p>Kemas kini pembilang agregat tanpa nama dihantar ke koleksi <code>_globalStats</code> di Firestore. Tanpa identiti pengguna, IP, atau pengecam peranti.</p>
-
-    <h3>2.4 Zikir Berkumpulan / Khatam (Data Awan)</h3>
-    <p>Ciri ini adalah <strong>pilihan</strong>:</p>
-    <ul>
-      <li><strong>Firebase Authentication (tanpa nama):</strong> UID rawak tanpa e-mel/telefon/nama sebenar.</li>
-      <li><strong>Firestore (us-west1):</strong> Nama kumpulan, niat, kod jemputan, nama samaran anda, kemajuan tugasan, senarai ahli, log audit.</li>
-      <li><strong>Cloud Functions:</strong> Operasi kritikal di pelayan.</li>
-      <li><strong>App Check:</strong> Menghalang pelanggan palsu.</li>
-    </ul>
-
-    <h3>2.5 Iklan (Google AdMob)</h3>
-    <ul>
-      <li>Tanpa langganan Premium, iklan sepanduk dan berganjaran dipaparkan.</li>
-      <li>AdMob mungkin memproses AD_ID dan maklumat sesi.</li>
-      <li>Untuk pengguna EEA/UK/Swiss, dialog persetujuan UMP dipaparkan.</li>
-      <li>Iklan diperibadikan tidak dipaparkan tanpa persetujuan anda.</li>
-    </ul>
-
-    <h3>2.6 Pembelian (Google Play Billing)</h3>
-    <p>Langganan Premium diproses melalui Google Play. ZikirMatik <strong>tidak melihat atau menyimpan</strong> nombor kad atau maklumat pembayaran.</p>
-
-    <h2>3. Lokasi (Kiblat Sahaja)</h2>
-    <p>Lokasi hanya digunakan dalam Kompas Kiblat pada peranti. <strong>Tidak pernah dihantar ke pelayan atau disimpan</strong>.</p>
-
-    <h2>4. Kamera (Imbasan QR Sahaja)</h2>
+    <h2>2. Kamera (Imbasan QR Sahaja)</h2>
     <p>Kamera hanya dibuka untuk mengimbas QR. <strong>Imej diproses masa nyata, tidak disimpan, tidak dihantar</strong>.</p>
 
-    <h2>5. Kebenaran</h2>
+    <h2>3. Kebenaran</h2>
     <div class="table-wrap"><table>
       <tr><th>Kebenaran</th><th>Tujuan</th><th>Keluar peranti?</th></tr>
       <tr><td>INTERNET</td><td>Komunikasi Firebase, AdMob, Cloud Functions</td><td>Ya</td></tr>
-      <tr><td>ACCESS_FINE/COARSE_LOCATION</td><td>Pengiraan Kiblat</td><td>Tidak</td></tr>
       <tr><td>CAMERA</td><td>Menyertai kumpulan melalui QR</td><td>Tidak</td></tr>
       <tr><td>POST_NOTIFICATIONS</td><td>Peringatan hadis</td><td>Tidak</td></tr>
       <tr><td>VIBRATE</td><td>Maklum balas haptik</td><td>Tidak</td></tr>
@@ -95,7 +50,7 @@
       <tr><td>AD_ID</td><td>ID AdMob</td><td>Ya</td></tr>
     </table></div>
 
-    <h2>6. Perkhidmatan Pihak Ketiga</h2>
+    <h2>4. Perkhidmatan Pihak Ketiga</h2>
     <ul>
       <li><a href="https://firebase.google.com/support/privacy">Firebase (Analytics, Crashlytics, Auth, Firestore, Cloud Functions, App Check)</a></li>
       <li><a href="https://policies.google.com/privacy">Google AdMob</a></li>
@@ -103,7 +58,7 @@
       <li><a href="https://policies.google.com/privacy">Google User Messaging Platform (UMP)</a></li>
     </ul>
 
-    <h2>7. Penyimpanan dan Hak Pemadaman</h2>
+    <h2>5. Penyimpanan dan Hak Pemadaman</h2>
     <ul>
       <li><strong>Data peranti:</strong> dipadam apabila aplikasi dinyahpasang.</li>
       <li><strong>Sejarah:</strong> boleh dipadam dari aplikasi.</li>
@@ -112,10 +67,10 @@
       <li><strong>Analytics:</strong> Firebase Analytics dipadam automatik selepas 14 bulan. Crashlytics: 90 hari.</li>
     </ul>
 
-    <h2>8. Kanak-kanak</h2>
+    <h2>6. Kanak-kanak</h2>
     <p>Aplikasi tidak bertujuan untuk kanak-kanak di bawah 13 tahun. Tiada penciptaan akaun atau pengumpulan data peribadi.</p>
 
-    <h2>9. Keselamatan Data</h2>
+    <h2>7. Keselamatan Data</h2>
     <ul>
       <li>Komunikasi Firebase TLS 1.2+ disulitkan.</li>
       <li>Peraturan Firestore: setiap ahli hanya membaca kumpulannya.</li>
@@ -123,10 +78,10 @@
       <li>App Check menghalang pelanggan palsu.</li>
     </ul>
 
-    <h2>10. Perubahan Dasar</h2>
+    <h2>8. Perubahan Dasar</h2>
     <p>Jika dasar dikemas kini, tarikh "Kemas kini terakhir" akan diubah.</p>
 
-    <h2>11. Hubungi dan Hak GDPR</h2>
+    <h2>9. Hubungi dan Hak GDPR</h2>
     <p>Hak anda: akses, pembetulan, pemadaman, kemudahalihan, bantahan.</p>
     <p><a href="mailto:zelvoai@gmail.com">zelvoai@gmail.com</a></p>
   </div>

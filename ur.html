@@ -31,10 +31,10 @@
       <strong>خلاصہ:</strong> ZikirMatik Pro آپ کا ذاتی ڈیٹا فروخت نہیں کرتا، ای میل/فون/اصلی نام نہیں لیتا، اور اکاؤنٹ بنانے کی ضرورت نہیں۔ انفرادی استعمال میں آپ کا تمام ڈیٹا ڈیوائس پر رہتا ہے۔ گروپ ذکر فیچر استعمال کرتے وقت صرف گروپ ڈیٹا (عرفی نام، گروپ کا نام، کاؤنٹرز) Firebase Firestore پر محفوظ طریقے سے پروسیس ہوتا ہے۔
     </div>
 
-    <h2>1. ڈیٹا کنٹرولر</h2>
+    <h2>1. ڈیٹا کنٹرولر</h2>
     <p>یہ ایپ Gökay Tutal (zelvoai@gmail.com) کی طرف سے تیار اور شائع کی گئی ہے۔ GDPR / Google Play Developer Program کی پالیسیوں کی تعمیل۔</p>
 
-    <h2>2. ہم کون سا ڈیٹا اکٹھا کرتے ہیں اور کہاں محفوظ ہوتا ہے</h2>
+    <h2>2. ہم کون سا ڈیٹا اکٹھا کرتے ہیں اور کہاں محفوظ ہوتا ہے</h2>
 
     <h3>2.1 صرف آپ کے ڈیوائس پر محفوظ ڈیٹا</h3>
     <ul>
@@ -75,17 +75,13 @@
     <h3>2.6 خریداریاں (Google Play Billing)</h3>
     <p>Premium سبسکرپشن Google Play سے پروسیس ہوتی ہے۔ ZikirMatik آپ کا کارڈ یا ادائیگی کی معلومات <strong>نہیں دیکھتا یا محفوظ کرتا</strong>۔</p>
 
-    <h2>3. مقام (صرف قبلہ)</h2>
-    <p>مقام صرف قبلہ کمپاس میں ڈیوائس پر استعمال ہوتا ہے۔ <strong>کبھی سرور پر نہیں بھیجا یا محفوظ کیا جاتا</strong>۔</p>
-
-    <h2>4. کیمرا (صرف QR اسکین)</h2>
+    <h2>3. کیمرا (صرف QR اسکین)</h2>
     <p>کیمرا صرف QR اسکین کے لیے کھلتا ہے۔ <strong>تصویر ریئل ٹائم میں پروسیس، محفوظ نہیں، باہر نہیں بھیجی</strong>۔</p>
 
-    <h2>5. اجازتیں</h2>
+    <h2>4. اجازتیں</h2>
     <div class="table-wrap"><table>
       <tr><th>اجازت</th><th>مقصد</th><th>ڈیوائس سے باہر؟</th></tr>
       <tr><td>INTERNET</td><td>Firebase، AdMob، Cloud Functions مواصلات</td><td>ہاں</td></tr>
-      <tr><td>ACCESS_FINE/COARSE_LOCATION</td><td>قبلہ سمت کی گنتی</td><td>نہیں</td></tr>
       <tr><td>CAMERA</td><td>QR کے ذریعے گروپ میں شامل ہونا</td><td>نہیں</td></tr>
       <tr><td>POST_NOTIFICATIONS</td><td>حدیث یاد دہانیاں</td><td>نہیں</td></tr>
       <tr><td>VIBRATE</td><td>ہیپٹک فیڈبیک</td><td>نہیں</td></tr>
@@ -95,7 +91,7 @@
       <tr><td>AD_ID</td><td>AdMob ID</td><td>ہاں</td></tr>
     </table></div>
 
-    <h2>6. تیسری پارٹی خدمات</h2>
+    <h2>5. تیسری پارٹی خدمات</h2>
     <ul>
       <li><a href="https://firebase.google.com/support/privacy">Firebase (Analytics, Crashlytics, Auth, Firestore, Cloud Functions, App Check)</a></li>
       <li><a href="https://policies.google.com/privacy">Google AdMob</a></li>
@@ -103,7 +99,7 @@
       <li><a href="https://policies.google.com/privacy">Google User Messaging Platform (UMP)</a></li>
     </ul>
 
-    <h2>7. ڈیٹا کی برقراری اور حذف کا حق</h2>
+    <h2>6. ڈیٹا کی برقراری اور حذف کا حق</h2>
     <ul>
       <li><strong>ڈیوائس ڈیٹا:</strong> ایپ اَن انسٹال پر حذف۔</li>
       <li><strong>گنتی کی تاریخ:</strong> ایپ سے حذف کی جا سکتی ہے۔</li>
@@ -112,10 +108,10 @@
       <li><strong>Analytics:</strong> Firebase Analytics 14 ماہ بعد خودکار حذف۔ Crashlytics: 90 دن۔</li>
     </ul>
 
-    <h2>8. بچے</h2>
+    <h2>7. بچے</h2>
     <p>ایپ 13 سال سے کم عمر بچوں کے لیے نہیں ہے۔ اکاؤنٹ بنانے یا ذاتی ڈیٹا جمع کرنے کی ضرورت نہیں۔</p>
 
-    <h2>9. ڈیٹا سیکیورٹی</h2>
+    <h2>8. ڈیٹا سیکیورٹی</h2>
     <ul>
       <li>Firebase مواصلات TLS 1.2+ خفیہ کاری۔</li>
       <li>Firestore Security Rules: ہر رکن صرف اپنا گروپ پڑھتا ہے۔</li>
@@ -123,10 +119,10 @@
       <li>App Check جعلی کلائنٹس کو روکتا ہے۔</li>
     </ul>
 
-    <h2>10. پالیسی میں تبدیلیاں</h2>
+    <h2>9. پالیسی میں تبدیلیاں</h2>
     <p>اگر پالیسی اپ ڈیٹ ہو، "آخری اپ ڈیٹ" کی تاریخ بدلی جاتی ہے۔</p>
 
-    <h2>11. رابطہ اور GDPR حقوق</h2>
+    <h2>10. رابطہ اور GDPR حقوق</h2>
     <p>آپ کے حقوق: رسائی، درستی، حذف، منتقلی، اعتراض۔</p>
     <p><a href="mailto:zelvoai@gmail.com">zelvoai@gmail.com</a></p>
   </div>

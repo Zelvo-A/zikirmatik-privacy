@@ -32,10 +32,10 @@
       <strong>Özet:</strong> ZikirMatik Pro kişisel verilerinizi satmaz, e-posta/telefon/gerçek ad toplamaz ve hesap oluşturmanızı gerektirmez. Tek başına kullanımda tüm verileriniz cihazınızda kalır. Grup Zikir özelliğini kullandığınızda yalnızca grup ile ilgili veriler (takma ad, grup adı, görev sayaçları) Firebase Firestore'da güvenli şekilde işlenir. Reklam ve kilitlenme telemetrisi anonimdir.
     </div>
 
-    <h2>1. Sorumlu</h2>
+    <h2>1. Sorumlu</h2>
     <p>Bu uygulama Gökay Tutal (zelvoai@gmail.com) tarafından geliştirilip yayımlanmaktadır. Veri sorumlusu sıfatıyla KVKK / GDPR / Google Play Developer Programı politikalarına uygunluk taahhüt edilir.</p>
 
-    <h2>2. Topladığımız Veriler ve Saklama Yeri</h2>
+    <h2>2. Topladığımız Veriler ve Saklama Yeri</h2>
 
     <h3>2.1 Yalnızca Cihazınızda Saklanan Veriler</h3>
     <p>Bu veriler sunucuya gönderilmez ve sadece sizin cihazınızda Room veritabanı ve DataStore üzerinde tutulur:</p>
@@ -90,17 +90,13 @@
     <h3>2.6 Satın Almalar (Google Play Billing)</h3>
     <p>Premium aboneliği Google Play Billing üzerinden işlenir. ZikirMatik kart numaranızı, ödeme bilgilerinizi <strong>görmez veya saklamaz</strong>. Satın alma sonucu (premium aktif/değil) Google Play'den alınan token ile doğrulanır. Hangi cihazın premium olduğu Firestore <code>users/{uid}/isPremium</code> alanında saklanır.</p>
 
-    <h2>3. Konum Verisi (Sadece Kıble)</h2>
-    <p>Kıble pusulasını açtığınızda yaklaşık ve hassas konum kullanılır. Konum yalnızca cihazınızda hesaplama için kullanılır; <strong>hiçbir sunucuya gönderilmez ve saklanmaz</strong>.</p>
-
-    <h2>4. Kamera Verisi (Sadece QR Tarama)</h2>
+    <h2>3. Kamera Verisi (Sadece QR Tarama)</h2>
     <p>Davet kodu QR taramak istediğinizde kamera açılır. Kameradan alınan görüntü <strong>cihazda gerçek zamanlı işlenir, kaydedilmez ve dışarı gönderilmez</strong>. Yalnızca QR kod metni okunur.</p>
 
-    <h2>5. İzinler</h2>
+    <h2>4. İzinler</h2>
     <div class="table-wrap"><table>
       <tr><th>İzin</th><th>Amaç</th><th>Veri Dışarı Çıkar mı?</th></tr>
       <tr><td>INTERNET</td><td>Firebase, AdMob, Cloud Functions iletişimi</td><td>Evet (yukarıda belirtilen veriler)</td></tr>
-      <tr><td>ACCESS_FINE_LOCATION / COARSE_LOCATION</td><td>Kıble yönü hesaplama</td><td>Hayır</td></tr>
       <tr><td>CAMERA</td><td>QR kod ile gruba katılma</td><td>Hayır</td></tr>
       <tr><td>POST_NOTIFICATIONS</td><td>Günlük hadis ve sayım bildirimleri</td><td>Hayır</td></tr>
       <tr><td>VIBRATE</td><td>Sayım sırasında dokunsal geri bildirim</td><td>Hayır</td></tr>
@@ -110,7 +106,7 @@
       <tr><td>com.google.android.gms.permission.AD_ID</td><td>AdMob reklam kimliği erişimi</td><td>Evet (sadece AdMob'a)</td></tr>
     </table></div>
 
-    <h2>6. Yaptığımız İşlemler — Kısa Açıklama</h2>
+    <h2>5. Yaptığımız İşlemler — Kısa Açıklama</h2>
     <ul>
       <li><strong>Sayım:</strong> Tap sayısı yerel veritabanına yazılır; her 10 tap'te bir anonim global istatistik sayacı güncellenir.</li>
       <li><strong>Hatim Grup oluşturma:</strong> Cloud Function ile transaction yapılır; grup ve davet kodu Firestore'a yazılır; anonim UID grup yöneticisi olarak işaretlenir.</li>
@@ -121,7 +117,7 @@
       <li><strong>Reklam izleyerek kapasite artırma:</strong> Ödüllü reklam tamamlandığında Cloud Function ile grup kapasitesi +5 artırılır (24 saat içinde tekrar edilebilir).</li>
     </ul>
 
-    <h2>7. Üçüncü Taraf Hizmetler</h2>
+    <h2>6. Üçüncü Taraf Hizmetler</h2>
     <ul>
       <li><a href="https://firebase.google.com/support/privacy">Firebase (Analytics, Crashlytics, Auth, Firestore, Cloud Functions, App Check)</a></li>
       <li><a href="https://policies.google.com/privacy">Google AdMob</a></li>
@@ -129,7 +125,7 @@
       <li><a href="https://policies.google.com/privacy">Google User Messaging Platform (UMP)</a></li>
     </ul>
 
-    <h2>8. Veri Saklama Süresi ve Silme Hakkınız</h2>
+    <h2>7. Veri Saklama Süresi ve Silme Hakkınız</h2>
     <ul>
       <li><strong>Cihaz verileri:</strong> Uygulamayı kaldırdığınızda silinir.</li>
       <li><strong>Sayım geçmişi:</strong> Uygulama içinden manuel olarak silinebilir.</li>
@@ -139,10 +135,10 @@
       <li><strong>Global istatistikler:</strong> Kişiselleştirilemediği için süresiz tutulur (toplu agregasyon).</li>
     </ul>
 
-    <h2>9. Çocukların Gizliliği</h2>
+    <h2>8. Çocukların Gizliliği</h2>
     <p>Uygulama 13 yaş altı çocuklara yönelik değildir. Hesap oluşturma veya kişisel veri toplama içermediğinden COPPA / GDPR-K kapsamında riskli kategoride değildir. Bir çocuğun veri gönderdiğini düşünüyorsanız e-postayla bize bildirin; verileri sileriz.</p>
 
-    <h2>10. Veri Güvenliği</h2>
+    <h2>9. Veri Güvenliği</h2>
     <ul>
       <li>Firebase iletişimi TLS 1.2+ ile şifrelidir.</li>
       <li>Firestore Security Rules ile her üyenin yalnızca üyesi olduğu grupları okuyabildiği zorunlu kılınmıştır.</li>
@@ -151,10 +147,10 @@
       <li>Premium kapasite artırma ve ödüllü reklam işlemleri rate limit + cooldown ile korunur.</li>
     </ul>
 
-    <h2>11. Politikadaki Değişiklikler</h2>
+    <h2>10. Politikadaki Değişiklikler</h2>
     <p>Bu politika güncellenirse bu sayfadaki "Son güncelleme" tarihi değiştirilir. Önemli değişikliklerde uygulama içi bildirim gösteririz.</p>
 
-    <h2>12. İletişim ve KVKK / GDPR Hakları</h2>
+    <h2>11. İletişim ve KVKK / GDPR Hakları</h2>
     <p>Aşağıdaki haklarınız vardır: erişim, düzeltme, silme, işlemeyi kısıtlama, veri taşınabilirliği, itiraz. Talepleriniz için:</p>
     <p><a href="mailto:zelvoai@gmail.com">zelvoai@gmail.com</a></p>
   </div>
