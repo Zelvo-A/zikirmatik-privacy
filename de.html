@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZikirMatik Pro - Datenschutzrichtlinie</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 24px; background: #121712; color: #e9efe8; line-height: 1.7; }
+    .container { max-width: 840px; margin: 0 auto; }
+    h1, h2, h3 { color: #ffffff; }
+    h1 { margin-top: 0; font-size: 28px; }
+    h2 { margin-top: 28px; font-size: 18px; border-bottom: 1px solid #29412b; padding-bottom: 6px; }
+    h3 { margin-top: 18px; font-size: 16px; color: #d8e6d6; }
+    p, li, td, th { font-size: 15px; }
+    .meta { color: #b6c3b6; margin-bottom: 20px; }
+    .note { background: #1d2b1f; border-left: 4px solid #7cc184; padding: 14px 16px; border-radius: 8px; margin: 18px 0; }
+    ul { padding-left: 22px; }
+    .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; min-width: 320px; }
+    th, td { text-align: left; border-bottom: 1px solid #29412b; padding: 10px 8px; vertical-align: top; word-break: break-word; }
+    a { color: #9fd8ff; text-decoration: none; }
+    strong { color: #ffffff; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Datenschutzrichtlinie</h1>
+    <p class="meta">Letzte Aktualisierung: 17. Mai 2026 · Gültig ab: 17. Mai 2026</p>
+
+    <div class="note">
+      <strong>Zusammenfassung:</strong> ZikirMatik Pro verkauft Ihre persönlichen Daten nicht, sammelt keine E-Mail/Telefon/Echtnamen und verlangt keine Kontoerstellung. In der Einzelnutzung bleiben alle Daten auf Ihrem Gerät. Bei Nutzung der Gruppen-Dhikr-Funktion werden nur Gruppendaten (Spitzname, Gruppenname, Aufgabenzähler) sicher auf Firebase Firestore verarbeitet. Anzeigen und Absturztelemetrie sind anonym.
+    </div>
+
+    <h2>1. Verantwortlicher</h2>
+    <p>Diese App wird von Gökay Tutal (zelvoai@gmail.com) entwickelt und veröffentlicht. Als Verantwortlicher wird die Einhaltung von DSGVO / Google Play Developer Program Richtlinien zugesichert.</p>
+
+    <h2>2. Welche Daten wir sammeln und wo sie gespeichert sind</h2>
+
+    <h3>2.1 Nur auf Ihrem Gerät gespeicherte Daten</h3>
+    <ul>
+      <li>Ihre Dhikr-Liste, eigene Einträge und Ziele</li>
+      <li>Zählverlauf und Sitzungsaufzeichnungen</li>
+      <li>App-Einstellungen: Design, Sprache, Schriftart, Ton/Vibration, Erinnerungszeit</li>
+      <li>Onboarding- und Datenschutzakzeptanzstatus</li>
+      <li>Lokaler Premium-Kaufverifizierungsstatus (Play Billing-Token)</li>
+    </ul>
+
+    <h3>2.2 Anonyme Analytik &amp; Telemetrie (Firebase)</h3>
+    <ul>
+      <li><strong>Firebase Analytics:</strong> Bildschirmaufrufe, angetippte Schaltflächen, Nutzungsereignisse. Keine personenbezogenen Daten.</li>
+      <li><strong>Firebase Crashlytics:</strong> Absturz-Stacktraces, Gerätemodell, Android-Version, anonyme Firebase Installation ID.</li>
+      <li><strong>Firebase App Check:</strong> Verifiziert, dass Serveraufrufe von einem legitimen Gerät/einer legitimen App stammen.</li>
+    </ul>
+
+    <h3>2.3 Anonyme globale Statistiken</h3>
+    <p>Anonyme aggregierte Zählerupdates werden an die <code>_globalStats</code>-Sammlung in Firebase Firestore gesendet. Diese Daten tragen keine Nutzeridentität, IP oder Geräte-ID.</p>
+
+    <h3>2.4 Gruppen-Dhikr / Khatm (Cloud-Daten)</h3>
+    <p>Diese Funktion ist <strong>optional</strong>. Sie wird nur aktiviert, wenn Sie eine Gruppe erstellen oder beitreten:</p>
+    <ul>
+      <li><strong>Firebase Authentication (anonym):</strong> Eine zufällige UID. Enthält keine E-Mail/Telefon/echten Namen.</li>
+      <li><strong>Firestore (us-west1):</strong> Gruppentitel, Absicht, Einladungscode, Ihr Spitzname, Aufgabenfortschritt, Mitgliederliste, Audit-Log.</li>
+      <li><strong>Cloud Functions:</strong> Kritische Operationen (Erstellen, Beitreten, Abschluss, Mitgliederverwaltung) laufen serverseitig.</li>
+      <li><strong>App Check:</strong> Verhindert gefälschte Clients und Bots.</li>
+    </ul>
+
+    <h3>2.5 Werbung (Google AdMob)</h3>
+    <ul>
+      <li>Ohne Premium-Abonnement werden Banner- und Belohnungsanzeigen angezeigt.</li>
+      <li>AdMob kann AD_ID und Sitzungsinformationen verarbeiten.</li>
+      <li>Für EWR/UK/Schweiz-Nutzer wird ein UMP-Einwilligungsdialog angezeigt.</li>
+      <li>Personalisierte Anzeigen werden ohne Ihre Einwilligung nicht angezeigt.</li>
+    </ul>
+
+    <h3>2.6 Käufe (Google Play Billing)</h3>
+    <p>Premium-Abonnements werden über Google Play abgewickelt. ZikirMatik <strong>sieht oder speichert</strong> Ihre Kartennummer oder Zahlungsinformationen <strong>nicht</strong>.</p>
+
+    <h2>3. Standortdaten (nur Qibla)</h2>
+    <p>Grob- und Feinstandort werden beim Öffnen des Qibla-Kompasses verwendet. <strong>Niemals an einen Server gesendet, nicht gespeichert</strong>.</p>
+
+    <h2>4. Kameradaten (nur QR-Scan)</h2>
+    <p>Die Kamera öffnet sich nur, wenn Sie einen QR-Einladungscode scannen. <strong>Das Bild wird in Echtzeit auf dem Gerät verarbeitet, nicht gespeichert und nicht nach außen gesendet</strong>.</p>
+
+    <h2>5. Berechtigungen</h2>
+    <div class="table-wrap"><table>
+      <tr><th>Berechtigung</th><th>Zweck</th><th>Vom Gerät gesendet?</th></tr>
+      <tr><td>INTERNET</td><td>Kommunikation mit Firebase, AdMob, Cloud Functions</td><td>Ja</td></tr>
+      <tr><td>ACCESS_FINE/COARSE_LOCATION</td><td>Qibla-Berechnung</td><td>Nein</td></tr>
+      <tr><td>CAMERA</td><td>QR-Code-Beitritt</td><td>Nein</td></tr>
+      <tr><td>POST_NOTIFICATIONS</td><td>Tägliche Hadith-Benachrichtigungen</td><td>Nein</td></tr>
+      <tr><td>VIBRATE</td><td>Haptisches Feedback</td><td>Nein</td></tr>
+      <tr><td>RECEIVE_BOOT_COMPLETED</td><td>Erinnerungen nach Neustart</td><td>Nein</td></tr>
+      <tr><td>SCHEDULE_EXACT_ALARM</td><td>Tägliche Hadith-Erinnerung</td><td>Nein</td></tr>
+      <tr><td>BILLING</td><td>Google Play Premium-Kauf</td><td>Nein</td></tr>
+      <tr><td>AD_ID</td><td>AdMob Werbe-ID</td><td>Ja</td></tr>
+    </table></div>
+
+    <h2>6. Drittanbieter</h2>
+    <ul>
+      <li><a href="https://firebase.google.com/support/privacy">Firebase (Analytics, Crashlytics, Auth, Firestore, Cloud Functions, App Check)</a></li>
+      <li><a href="https://policies.google.com/privacy">Google AdMob</a></li>
+      <li><a href="https://policies.google.com/privacy">Google Play Billing</a></li>
+      <li><a href="https://policies.google.com/privacy">Google User Messaging Platform (UMP)</a></li>
+    </ul>
+
+    <h2>7. Datenaufbewahrung und Löschungsrecht</h2>
+    <ul>
+      <li><strong>Gerätedaten:</strong> Gelöscht beim Deinstallieren der App.</li>
+      <li><strong>Zählverlauf:</strong> Kann manuell innerhalb der App gelöscht werden.</li>
+      <li><strong>Gruppendaten:</strong> Beim Verlassen oder Löschen einer Gruppe aus Firestore entfernt.</li>
+      <li><strong>Anonyme UID-Löschung:</strong> Anfrage an <a href="mailto:zelvoai@gmail.com">zelvoai@gmail.com</a> — Löschung innerhalb von 30 Tagen.</li>
+      <li><strong>Analytics:</strong> Firebase Analytics automatisch nach 14 Monaten gelöscht. Crashlytics: 90 Tage.</li>
+    </ul>
+
+    <h2>8. Kinder</h2>
+    <p>Die App ist nicht für Kinder unter 13 Jahren bestimmt. Es ist keine Kontoerstellung oder Erfassung personenbezogener Daten erforderlich.</p>
+
+    <h2>9. Datensicherheit</h2>
+    <ul>
+      <li>Firebase-Kommunikation ist TLS 1.2+ verschlüsselt.</li>
+      <li>Firestore Security Rules erzwingen, dass jedes Mitglied nur seine Gruppen lesen kann.</li>
+      <li>Cloud Functions verifizieren kritische Operationen serverseitig.</li>
+      <li>App Check verhindert gefälschte Clients.</li>
+    </ul>
+
+    <h2>10. Änderungen dieser Richtlinie</h2>
+    <p>Wenn diese Richtlinie aktualisiert wird, wird das Datum "Letzte Aktualisierung" auf dieser Seite geändert.</p>
+
+    <h2>11. Kontakt und Ihre DSGVO-Rechte</h2>
+    <p>Sie haben folgende Rechte: Zugang, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit, Widerspruch.</p>
+    <p><a href="mailto:zelvoai@gmail.com">zelvoai@gmail.com</a></p>
+  </div>
+</body>
+</html>

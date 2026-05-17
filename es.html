@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZikirMatik Pro - Política de Privacidad</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 24px; background: #121712; color: #e9efe8; line-height: 1.7; }
+    .container { max-width: 840px; margin: 0 auto; }
+    h1, h2, h3 { color: #ffffff; }
+    h1 { margin-top: 0; font-size: 28px; }
+    h2 { margin-top: 28px; font-size: 18px; border-bottom: 1px solid #29412b; padding-bottom: 6px; }
+    h3 { margin-top: 18px; font-size: 16px; color: #d8e6d6; }
+    p, li, td, th { font-size: 15px; }
+    .meta { color: #b6c3b6; margin-bottom: 20px; }
+    .note { background: #1d2b1f; border-left: 4px solid #7cc184; padding: 14px 16px; border-radius: 8px; margin: 18px 0; }
+    ul { padding-left: 22px; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; min-width: 320px; }
+    th, td { text-align: left; border-bottom: 1px solid #29412b; padding: 10px 8px; vertical-align: top; word-break: break-word; }
+    a { color: #9fd8ff; text-decoration: none; }
+    strong { color: #ffffff; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Política de Privacidad</h1>
+    <p class="meta">Última actualización: 17 de mayo de 2026 · Fecha efectiva: 17 de mayo de 2026</p>
+
+    <div class="note">
+      <strong>Resumen:</strong> ZikirMatik Pro no vende sus datos personales, no recopila correo/teléfono/nombre real y no requiere creación de cuenta. En uso individual, todos sus datos permanecen en su dispositivo. Al usar la función Dhikr en Grupo, solo los datos del grupo (apodo, nombre del grupo, contadores) se procesan en Firebase Firestore. La telemetría de anuncios y fallos es anónima.
+    </div>
+
+    <h2>1. Responsable del tratamiento</h2>
+    <p>Esta aplicación es desarrollada y publicada por Gökay Tutal (zelvoai@gmail.com). Se compromete el cumplimiento del RGPD / KVKK / Programa para Desarrolladores de Google Play.</p>
+
+    <h2>2. Datos que recopilamos y dónde se almacenan</h2>
+
+    <h3>2.1 Datos almacenados solo en su dispositivo</h3>
+    <ul>
+      <li>Su lista de dhikr, dhikr personalizados y objetivos</li>
+      <li>Historial de conteo y registros de sesión</li>
+      <li>Configuración: tema, idioma, fuente, sonido/vibración, hora de notificación</li>
+      <li>Estado de aceptación del onboarding y política</li>
+      <li>Estado local de verificación de compra Premium</li>
+    </ul>
+
+    <h3>2.2 Análisis anónimos (Firebase)</h3>
+    <ul>
+      <li><strong>Firebase Analytics:</strong> Pantallas vistas, eventos de uso. Sin datos personales.</li>
+      <li><strong>Firebase Crashlytics:</strong> Trazas de fallos, modelo de dispositivo, versión Android, ID de instalación anónimo.</li>
+      <li><strong>Firebase App Check:</strong> Verifica que las llamadas vengan de un dispositivo/app legítimo.</li>
+    </ul>
+
+    <h3>2.3 Estadísticas globales anónimas</h3>
+    <p>Se envían actualizaciones anónimas de contadores agregados a la colección <code>_globalStats</code> en Firestore. No incluyen identidad, IP ni identificador de dispositivo.</p>
+
+    <h3>2.4 Dhikr en Grupo / Jatm (datos en la nube)</h3>
+    <p>Esta función es <strong>opcional</strong>:</p>
+    <ul>
+      <li><strong>Firebase Authentication (anónimo):</strong> UID aleatorio sin correo/teléfono/nombre real.</li>
+      <li><strong>Firestore (us-west1):</strong> Nombre del grupo, intención, código de invitación, su apodo, progreso, lista de miembros, registro de auditoría.</li>
+      <li><strong>Cloud Functions:</strong> Operaciones críticas en el servidor.</li>
+      <li><strong>App Check:</strong> Previene clientes falsos.</li>
+    </ul>
+
+    <h3>2.5 Publicidad (Google AdMob)</h3>
+    <ul>
+      <li>Sin suscripción Premium se muestran banners y anuncios recompensados.</li>
+      <li>AdMob puede procesar AD_ID e información de sesión.</li>
+      <li>Para EEE/Reino Unido/Suiza se muestra diálogo de consentimiento UMP.</li>
+      <li>No se muestran anuncios personalizados sin su consentimiento.</li>
+    </ul>
+
+    <h3>2.6 Compras (Google Play Billing)</h3>
+    <p>La suscripción Premium se procesa por Google Play. ZikirMatik <strong>no ve ni almacena</strong> su tarjeta o información de pago.</p>
+
+    <h2>3. Ubicación (solo Qibla)</h2>
+    <p>La ubicación se usa solo en la brújula Qibla, en el dispositivo. <strong>Nunca se envía a un servidor ni se almacena</strong>.</p>
+
+    <h2>4. Cámara (solo escaneo QR)</h2>
+    <p>La cámara se abre solo para escanear un código QR. <strong>La imagen se procesa en tiempo real, no se guarda ni se envía</strong>.</p>
+
+    <h2>5. Permisos</h2>
+    <div class="table-wrap"><table>
+      <tr><th>Permiso</th><th>Propósito</th><th>¿Sale del dispositivo?</th></tr>
+      <tr><td>INTERNET</td><td>Comunicación con Firebase, AdMob, Cloud Functions</td><td>Sí</td></tr>
+      <tr><td>ACCESS_FINE/COARSE_LOCATION</td><td>Cálculo de Qibla</td><td>No</td></tr>
+      <tr><td>CAMERA</td><td>Unirse a grupo por QR</td><td>No</td></tr>
+      <tr><td>POST_NOTIFICATIONS</td><td>Recordatorios de hadiz</td><td>No</td></tr>
+      <tr><td>VIBRATE</td><td>Retroalimentación táctil</td><td>No</td></tr>
+      <tr><td>RECEIVE_BOOT_COMPLETED</td><td>Restaurar recordatorios tras reinicio</td><td>No</td></tr>
+      <tr><td>SCHEDULE_EXACT_ALARM</td><td>Recordatorio de hadiz</td><td>No</td></tr>
+      <tr><td>BILLING</td><td>Compra Premium</td><td>No</td></tr>
+      <tr><td>AD_ID</td><td>ID de AdMob</td><td>Sí</td></tr>
+    </table></div>
+
+    <h2>6. Servicios de terceros</h2>
+    <ul>
+      <li><a href="https://firebase.google.com/support/privacy">Firebase (Analytics, Crashlytics, Auth, Firestore, Cloud Functions, App Check)</a></li>
+      <li><a href="https://policies.google.com/privacy">Google AdMob</a></li>
+      <li><a href="https://policies.google.com/privacy">Google Play Billing</a></li>
+      <li><a href="https://policies.google.com/privacy">Google User Messaging Platform (UMP)</a></li>
+    </ul>
+
+    <h2>7. Retención y derecho de eliminación</h2>
+    <ul>
+      <li><strong>Datos del dispositivo:</strong> Eliminados al desinstalar.</li>
+      <li><strong>Historial:</strong> Eliminable manualmente.</li>
+      <li><strong>Datos de grupo:</strong> Eliminados de Firestore al salir/borrar grupo.</li>
+      <li><strong>UID anónimo:</strong> Solicitud a <a href="mailto:zelvoai@gmail.com">zelvoai@gmail.com</a>, eliminación en 30 días.</li>
+      <li><strong>Analytics:</strong> Firebase Analytics auto-eliminado tras 14 meses. Crashlytics: 90 días.</li>
+    </ul>
+
+    <h2>8. Niños</h2>
+    <p>La app no está destinada a menores de 13 años. No requiere creación de cuenta ni recopilación de datos personales.</p>
+
+    <h2>9. Seguridad de los datos</h2>
+    <ul>
+      <li>Comunicación Firebase cifrada con TLS 1.2+.</li>
+      <li>Reglas de Firestore: cada miembro solo lee sus grupos.</li>
+      <li>Cloud Functions verifican operaciones críticas en servidor.</li>
+      <li>App Check previene clientes falsos.</li>
+    </ul>
+
+    <h2>10. Cambios en esta política</h2>
+    <p>Si se actualiza, se cambia la fecha "Última actualización".</p>
+
+    <h2>11. Contacto y derechos RGPD</h2>
+    <p>Tiene derechos de: acceso, rectificación, supresión, portabilidad, oposición.</p>
+    <p><a href="mailto:zelvoai@gmail.com">zelvoai@gmail.com</a></p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZikirMatik Pro - رازداری کی پالیسی</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 24px; background: #121712; color: #e9efe8; line-height: 1.7; }
+    .container { max-width: 840px; margin: 0 auto; }
+    h1, h2, h3 { color: #ffffff; }
+    h1 { margin-top: 0; font-size: 28px; }
+    h2 { margin-top: 28px; font-size: 18px; border-bottom: 1px solid #29412b; padding-bottom: 6px; }
+    h3 { margin-top: 18px; font-size: 16px; color: #d8e6d6; }
+    p, li, td, th { font-size: 15px; }
+    .meta { color: #b6c3b6; margin-bottom: 20px; }
+    .note { background: #1d2b1f; border-right: 4px solid #7cc184; padding: 14px 16px; border-radius: 8px; margin: 18px 0; }
+    ul { padding-right: 22px; padding-left: 0; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; min-width: 320px; }
+    th, td { text-align: right; border-bottom: 1px solid #29412b; padding: 10px 8px; vertical-align: top; word-break: break-word; }
+    a { color: #9fd8ff; text-decoration: none; }
+    strong { color: #ffffff; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>رازداری کی پالیسی</h1>
+    <p class="meta">آخری اپ ڈیٹ: 17 مئی 2026 · مؤثر تاریخ: 17 مئی 2026</p>
+
+    <div class="note">
+      <strong>خلاصہ:</strong> ZikirMatik Pro آپ کا ذاتی ڈیٹا فروخت نہیں کرتا، ای میل/فون/اصلی نام نہیں لیتا، اور اکاؤنٹ بنانے کی ضرورت نہیں۔ انفرادی استعمال میں آپ کا تمام ڈیٹا ڈیوائس پر رہتا ہے۔ گروپ ذکر فیچر استعمال کرتے وقت صرف گروپ ڈیٹا (عرفی نام، گروپ کا نام، کاؤنٹرز) Firebase Firestore پر محفوظ طریقے سے پروسیس ہوتا ہے۔
+    </div>
+
+    <h2>1. ڈیٹا کنٹرولر</h2>
+    <p>یہ ایپ Gökay Tutal (zelvoai@gmail.com) کی طرف سے تیار اور شائع کی گئی ہے۔ GDPR / Google Play Developer Program کی پالیسیوں کی تعمیل۔</p>
+
+    <h2>2. ہم کون سا ڈیٹا اکٹھا کرتے ہیں اور کہاں محفوظ ہوتا ہے</h2>
+
+    <h3>2.1 صرف آپ کے ڈیوائس پر محفوظ ڈیٹا</h3>
+    <ul>
+      <li>آپ کی ذکر کی فہرست، کسٹم ذکر اور اہداف</li>
+      <li>گنتی کی تاریخ اور سیشن ریکارڈز</li>
+      <li>سیٹنگز: تھیم، زبان، فونٹ، آواز/کمپن، نوٹیفکیشن وقت</li>
+      <li>آن بورڈنگ اور پالیسی منظوری کی حالت</li>
+      <li>Premium خرید کی مقامی تصدیق کی حالت</li>
+    </ul>
+
+    <h3>2.2 گمنام تجزیات (Firebase)</h3>
+    <ul>
+      <li><strong>Firebase Analytics:</strong> دیکھی گئی اسکرینیں، استعمال کے واقعات۔ کوئی ذاتی ڈیٹا نہیں۔</li>
+      <li><strong>Firebase Crashlytics:</strong> کریش ٹریس، ڈیوائس ماڈل، Android ورژن، گمنام Installation ID۔</li>
+      <li><strong>Firebase App Check:</strong> سرور کالز اصلی ڈیوائس/ایپ سے آنے کی تصدیق۔</li>
+    </ul>
+
+    <h3>2.3 گمنام عالمی اعدادوشمار</h3>
+    <p>Firestore میں <code>_globalStats</code> کلیکشن پر گمنام مجموعی کاؤنٹر اپ ڈیٹس بھیجی جاتی ہیں۔ کوئی صارف کی شناخت، IP یا ڈیوائس شناخت کنندہ نہیں۔</p>
+
+    <h3>2.4 گروپ ذکر / ختم (کلاؤڈ ڈیٹا)</h3>
+    <p>یہ فیچر <strong>اختیاری</strong> ہے:</p>
+    <ul>
+      <li><strong>Firebase Authentication (گمنام):</strong> بے ترتیب UID بغیر ای میل/فون/اصلی نام۔</li>
+      <li><strong>Firestore (us-west1):</strong> گروپ کا نام، نیت، دعوت کوڈ، آپ کا عرفی نام، کام کی پیش رفت، ارکان کی فہرست، آڈٹ لاگ۔</li>
+      <li><strong>Cloud Functions:</strong> سرور پر اہم آپریشنز۔</li>
+      <li><strong>App Check:</strong> جعلی کلائنٹس کو روکتا ہے۔</li>
+    </ul>
+
+    <h3>2.5 اشتہارات (Google AdMob)</h3>
+    <ul>
+      <li>Premium نہ ہونے پر بینر اور انعامی اشتہارات۔</li>
+      <li>AdMob AD_ID اور سیشن کی معلومات پروسیس کر سکتا ہے۔</li>
+      <li>EEA/UK/سوئٹزرلینڈ صارفین کے لیے UMP رضامندی ڈائلاگ۔</li>
+      <li>رضامندی کے بغیر ذاتی اشتہارات نہیں۔</li>
+    </ul>
+
+    <h3>2.6 خریداریاں (Google Play Billing)</h3>
+    <p>Premium سبسکرپشن Google Play سے پروسیس ہوتی ہے۔ ZikirMatik آپ کا کارڈ یا ادائیگی کی معلومات <strong>نہیں دیکھتا یا محفوظ کرتا</strong>۔</p>
+
+    <h2>3. مقام (صرف قبلہ)</h2>
+    <p>مقام صرف قبلہ کمپاس میں ڈیوائس پر استعمال ہوتا ہے۔ <strong>کبھی سرور پر نہیں بھیجا یا محفوظ کیا جاتا</strong>۔</p>
+
+    <h2>4. کیمرا (صرف QR اسکین)</h2>
+    <p>کیمرا صرف QR اسکین کے لیے کھلتا ہے۔ <strong>تصویر ریئل ٹائم میں پروسیس، محفوظ نہیں، باہر نہیں بھیجی</strong>۔</p>
+
+    <h2>5. اجازتیں</h2>
+    <div class="table-wrap"><table>
+      <tr><th>اجازت</th><th>مقصد</th><th>ڈیوائس سے باہر؟</th></tr>
+      <tr><td>INTERNET</td><td>Firebase، AdMob، Cloud Functions مواصلات</td><td>ہاں</td></tr>
+      <tr><td>ACCESS_FINE/COARSE_LOCATION</td><td>قبلہ سمت کی گنتی</td><td>نہیں</td></tr>
+      <tr><td>CAMERA</td><td>QR کے ذریعے گروپ میں شامل ہونا</td><td>نہیں</td></tr>
+      <tr><td>POST_NOTIFICATIONS</td><td>حدیث یاد دہانیاں</td><td>نہیں</td></tr>
+      <tr><td>VIBRATE</td><td>ہیپٹک فیڈبیک</td><td>نہیں</td></tr>
+      <tr><td>RECEIVE_BOOT_COMPLETED</td><td>یاد دہانیاں بحال کرنا</td><td>نہیں</td></tr>
+      <tr><td>SCHEDULE_EXACT_ALARM</td><td>حدیث یاد دہانی</td><td>نہیں</td></tr>
+      <tr><td>BILLING</td><td>Premium خرید</td><td>نہیں</td></tr>
+      <tr><td>AD_ID</td><td>AdMob ID</td><td>ہاں</td></tr>
+    </table></div>
+
+    <h2>6. تیسری پارٹی خدمات</h2>
+    <ul>
+      <li><a href="https://firebase.google.com/support/privacy">Firebase (Analytics, Crashlytics, Auth, Firestore, Cloud Functions, App Check)</a></li>
+      <li><a href="https://policies.google.com/privacy">Google AdMob</a></li>
+      <li><a href="https://policies.google.com/privacy">Google Play Billing</a></li>
+      <li><a href="https://policies.google.com/privacy">Google User Messaging Platform (UMP)</a></li>
+    </ul>
+
+    <h2>7. ڈیٹا کی برقراری اور حذف کا حق</h2>
+    <ul>
+      <li><strong>ڈیوائس ڈیٹا:</strong> ایپ اَن انسٹال پر حذف۔</li>
+      <li><strong>گنتی کی تاریخ:</strong> ایپ سے حذف کی جا سکتی ہے۔</li>
+      <li><strong>گروپ ڈیٹا:</strong> گروپ چھوڑنے/حذف کرنے پر Firestore سے حذف۔</li>
+      <li><strong>گمنام UID:</strong> <a href="mailto:zelvoai@gmail.com">zelvoai@gmail.com</a> پر درخواست، 30 دنوں میں حذف۔</li>
+      <li><strong>Analytics:</strong> Firebase Analytics 14 ماہ بعد خودکار حذف۔ Crashlytics: 90 دن۔</li>
+    </ul>
+
+    <h2>8. بچے</h2>
+    <p>ایپ 13 سال سے کم عمر بچوں کے لیے نہیں ہے۔ اکاؤنٹ بنانے یا ذاتی ڈیٹا جمع کرنے کی ضرورت نہیں۔</p>
+
+    <h2>9. ڈیٹا سیکیورٹی</h2>
+    <ul>
+      <li>Firebase مواصلات TLS 1.2+ خفیہ کاری۔</li>
+      <li>Firestore Security Rules: ہر رکن صرف اپنا گروپ پڑھتا ہے۔</li>
+      <li>Cloud Functions سرور سائیڈ پر اہم آپریشنز کی تصدیق۔</li>
+      <li>App Check جعلی کلائنٹس کو روکتا ہے۔</li>
+    </ul>
+
+    <h2>10. پالیسی میں تبدیلیاں</h2>
+    <p>اگر پالیسی اپ ڈیٹ ہو، "آخری اپ ڈیٹ" کی تاریخ بدلی جاتی ہے۔</p>
+
+    <h2>11. رابطہ اور GDPR حقوق</h2>
+    <p>آپ کے حقوق: رسائی، درستی، حذف، منتقلی، اعتراض۔</p>
+    <p><a href="mailto:zelvoai@gmail.com">zelvoai@gmail.com</a></p>
+  </div>
+</body>
+</html>

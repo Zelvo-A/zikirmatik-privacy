@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZikirMatik Pro - Privacy Policy</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 24px; background: #121712; color: #e9efe8; line-height: 1.7; }
+    .container { max-width: 840px; margin: 0 auto; }
+    h1, h2, h3 { color: #ffffff; }
+    h1 { margin-top: 0; font-size: 28px; }
+    h2 { margin-top: 28px; font-size: 18px; border-bottom: 1px solid #29412b; padding-bottom: 6px; }
+    h3 { margin-top: 18px; font-size: 16px; color: #d8e6d6; }
+    p, li, td, th { font-size: 15px; }
+    .meta { color: #b6c3b6; margin-bottom: 20px; }
+    .note { background: #1d2b1f; border-left: 4px solid #7cc184; padding: 14px 16px; border-radius: 8px; margin: 18px 0; }
+    .warn { background: #2b2419; border-left: 4px solid #e0a631; padding: 14px 16px; border-radius: 8px; margin: 18px 0; }
+    ul { padding-left: 22px; }
+    .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; min-width: 320px; }
+    th, td { text-align: left; border-bottom: 1px solid #29412b; padding: 10px 8px; vertical-align: top; word-break: break-word; }
+    a { color: #9fd8ff; text-decoration: none; }
+    strong { color: #ffffff; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Privacy Policy</h1>
+    <p class="meta">Last updated: May 17, 2026 · Effective date: May 17, 2026</p>
+
+    <div class="note">
+      <strong>Summary:</strong> ZikirMatik Pro does not sell your personal data, does not collect your email/phone/real name, and does not require account creation. In standalone use, all your data stays on your device. When you use the Group Dhikr feature, only group-related data (nickname, group name, task counters) is processed securely on Firebase Firestore. Ad and crash telemetry is anonymous.
+    </div>
+
+    <h2>1. Data Controller</h2>
+    <p>This app is developed and published by Gökay Tutal (zelvoai@gmail.com). As the data controller, compliance with KVKK / GDPR / Google Play Developer Program policies is committed.</p>
+
+    <h2>2. Data We Collect and Where It Is Stored</h2>
+
+    <h3>2.1 Data Stored Only On Your Device</h3>
+    <p>This data is not sent to any server and is kept only on your device in the Room database and DataStore:</p>
+    <ul>
+      <li>Your dhikr list, custom dhikr entries, and targets</li>
+      <li>Counting history and session records (date, count, which dhikr)</li>
+      <li>App settings: theme, language, font, sound/vibration preferences, daily hadith notification time</li>
+      <li>Onboarding and privacy policy acceptance status</li>
+      <li>Premium purchase local verification state (Play Billing token)</li>
+    </ul>
+
+    <h3>2.2 Anonymous Analytics &amp; Telemetry (Firebase)</h3>
+    <ul>
+      <li><strong>Firebase Analytics:</strong> Screens viewed, buttons tapped, usage events such as dhikr completed / qibla opened / onboarding finished. No content or personal data.</li>
+      <li><strong>Firebase Crashlytics:</strong> Crash stack traces, device model, Android version, anonymous Firebase Installation ID.</li>
+      <li><strong>Firebase App Check:</strong> Verifies that server calls originate from the legitimate device and app.</li>
+    </ul>
+
+    <h3>2.3 Anonymous Global Statistics</h3>
+    <p>To show which dhikr are most popular globally, anonymous aggregate counter updates are sent to the <code>_globalStats</code> collection in Firebase Firestore. This data does not carry user identity, IP, or device identifier; it is only aggregate counters like "X dhikr received +N count today".</p>
+
+    <h3>2.4 Group Dhikr / Khatm Feature (Cloud Data)</h3>
+    <p>This feature is <strong>optional</strong>. It is only activated when you create a group or join one. The following data is processed on Firebase infrastructure:</p>
+    <ul>
+      <li><strong>Firebase Authentication (Anonymous):</strong> A random UID automatically assigned to your device. It does not include email/phone/real name. It remains valid until you uninstall the app or request UID deletion.</li>
+      <li><strong>Firestore (us-west1 region):</strong>
+        <ul>
+          <li>Group title, intention note (e.g., "In memory of my grandmother"), privacy setting (open/private)</li>
+          <li>Invite code (6 characters) and creation date</li>
+          <li>Task definitions (type: Tahlil/Salawat/Istighfar, target count, assignment status)</li>
+          <li>Member list: only the nickname <em>you provided</em> + anonymous UID + role (admin / participant) + join date</li>
+          <li>Task progress counters (how many, when counted, used for speed analysis)</li>
+          <li>Audit log: admin actions (who approved which task / who removed whom)</li>
+          <li>Premium capacity boost attempts (ad-watch / Premium purchase records)</li>
+        </ul>
+      </li>
+      <li><strong>Cloud Functions (server-side):</strong> The following critical operations are run as server-side transactions:
+        <code>createHatimGroup</code>, <code>joinHatimGroupWithCode</code>, <code>assignTask</code>, <code>completeTask</code>, <code>approveTask</code>, <code>rotateJoinCode</code>, <code>addExtraReading</code>, <code>removeParticipant</code>, <code>updateGroupCapacity</code>, <code>boostGroupCapacityWithAd</code>, <code>leaveGroup</code>, <code>deleteGroup</code>.
+        They are used to prevent fraud, enforce capacity/membership rules, and block count manipulation.
+      </li>
+      <li><strong>App Check (Play Integrity / SafetyNet):</strong> Verifies that server calls come from a real device and the genuine app; prevents automated bot/spam access.</li>
+    </ul>
+
+    <h3>2.5 Ads (Google AdMob)</h3>
+    <p>If you are not a Premium subscriber, banner ads and rewarded ads (for capacity boosting) are shown.</p>
+    <ul>
+      <li>Google AdMob may process the Android Advertising ID (AD_ID) and session info to serve personalized or non-personalized ads.</li>
+      <li>For EEA / UK / Swiss users, a UMP (User Messaging Platform) consent dialog is shown.</li>
+      <li>Personalized ads are not shown without your consent.</li>
+    </ul>
+
+    <h3>2.6 Purchases (Google Play Billing)</h3>
+    <p>Premium subscription is processed through Google Play Billing. ZikirMatik <strong>does not see or store</strong> your card number or payment information. The purchase outcome (premium active/not) is verified with a token received from Google Play. The premium status per device is stored in the <code>users/{uid}/isPremium</code> field in Firestore.</p>
+
+    <h2>3. Location Data (Qibla Only)</h2>
+    <p>Coarse and fine location are used when you open the Qibla compass. The location is only used on your device for calculation; <strong>it is never sent to any server and is not stored</strong>.</p>
+
+    <h2>4. Camera Data (QR Scan Only)</h2>
+    <p>The camera opens when you want to scan a QR invite code. The image from the camera is <strong>processed in real time on the device, not saved, and not sent outside</strong>. Only the text of the QR code is read.</p>
+
+    <h2>5. Permissions</h2>
+    <div class="table-wrap"><table>
+      <tr><th>Permission</th><th>Purpose</th><th>Sent off device?</th></tr>
+      <tr><td>INTERNET</td><td>Communication with Firebase, AdMob, Cloud Functions</td><td>Yes (data listed above)</td></tr>
+      <tr><td>ACCESS_FINE_LOCATION / COARSE_LOCATION</td><td>Qibla direction calculation</td><td>No</td></tr>
+      <tr><td>CAMERA</td><td>Joining a group via QR code</td><td>No</td></tr>
+      <tr><td>POST_NOTIFICATIONS</td><td>Daily hadith and counting notifications</td><td>No</td></tr>
+      <tr><td>VIBRATE</td><td>Haptic feedback while counting</td><td>No</td></tr>
+      <tr><td>RECEIVE_BOOT_COMPLETED</td><td>Restore notification scheduling after device restart</td><td>No</td></tr>
+      <tr><td>SCHEDULE_EXACT_ALARM</td><td>Trigger the daily hadith reminder at the exact time</td><td>No</td></tr>
+      <tr><td>com.android.vending.BILLING</td><td>Premium purchase via Google Play</td><td>No (managed by Google Play)</td></tr>
+      <tr><td>com.google.android.gms.permission.AD_ID</td><td>AdMob ad ID access</td><td>Yes (to AdMob only)</td></tr>
+    </table></div>
+
+    <h2>6. What We Do — Brief Description</h2>
+    <ul>
+      <li><strong>Counting:</strong> Tap counts are written to the local database; every 10 taps, an anonymous global statistics counter is updated.</li>
+      <li><strong>Creating a Khatm Group:</strong> A transaction runs through a Cloud Function; the group and invite code are written to Firestore; your anonymous UID is marked as the group admin.</li>
+      <li><strong>Joining a group:</strong> The invite code is verified via Cloud Function; your nickname and anonymous UID are added as a member; group capacity is checked.</li>
+      <li><strong>Completing a task:</strong> The counting result is sent to a Cloud Function; if the counting speed looks suspicious, the task is put under "review" and waits for admin approval.</li>
+      <li><strong>Removing a member / deleting a group:</strong> Admin actions are logged in the audit log; the leaving member's assigned task is released.</li>
+      <li><strong>Premium purchase:</strong> The Google Play Billing token is verified, the <code>users/{uid}/isPremium</code> field is updated.</li>
+      <li><strong>Boosting capacity by watching an ad:</strong> When a rewarded ad completes, the Cloud Function boosts group capacity by +5 (repeatable within 24 hours).</li>
+    </ul>
+
+    <h2>7. Third-Party Services</h2>
+    <ul>
+      <li><a href="https://firebase.google.com/support/privacy">Firebase (Analytics, Crashlytics, Auth, Firestore, Cloud Functions, App Check)</a></li>
+      <li><a href="https://policies.google.com/privacy">Google AdMob</a></li>
+      <li><a href="https://policies.google.com/privacy">Google Play Billing</a></li>
+      <li><a href="https://policies.google.com/privacy">Google User Messaging Platform (UMP)</a></li>
+    </ul>
+
+    <h2>8. Data Retention Period and Your Right to Deletion</h2>
+    <ul>
+      <li><strong>Device data:</strong> Deleted when you uninstall the app.</li>
+      <li><strong>Counting history:</strong> Can be deleted manually from within the app.</li>
+      <li><strong>Group data:</strong> When you leave a group, the membership record is marked as "removed" and your tasks are released. If the group admin deletes the group, all member/task/progress data is deleted from Firestore.</li>
+      <li><strong>Anonymous UID deletion:</strong> You can send a request to <a href="mailto:zelvoai@gmail.com">zelvoai@gmail.com</a> with your UID or invite code; deletion will occur within 30 days.</li>
+      <li><strong>Analytics data:</strong> Firebase Analytics is auto-deleted after 14 months. Crashlytics crash data is retained for 90 days.</li>
+      <li><strong>Global statistics:</strong> Stored indefinitely as they are not personally identifiable (aggregate only).</li>
+    </ul>
+
+    <h2>9. Children's Privacy</h2>
+    <p>The app is not intended for children under 13. It does not require account creation or collect personal data, so it is not in a risky category under COPPA / GDPR-K. If you believe a child has sent data, please notify us by email; we will delete it.</p>
+
+    <h2>10. Data Security</h2>
+    <ul>
+      <li>Firebase communications are TLS 1.2+ encrypted.</li>
+      <li>Firestore Security Rules enforce that each member can only read groups they belong to.</li>
+      <li>Cloud Functions verify critical operations server-side; direct writes to Firestore are largely restricted.</li>
+      <li>App Check prevents fake clients.</li>
+      <li>Premium capacity boost and rewarded ad operations are protected with rate limiting + cooldown.</li>
+    </ul>
+
+    <h2>11. Changes to this Policy</h2>
+    <p>If this policy is updated, the "Last updated" date on this page is changed. For significant changes, we show an in-app notice.</p>
+
+    <h2>12. Contact and Your KVKK / GDPR Rights</h2>
+    <p>You have the following rights: access, rectification, deletion, restriction of processing, data portability, objection. For your requests:</p>
+    <p><a href="mailto:zelvoai@gmail.com">zelvoai@gmail.com</a></p>
+  </div>
+</body>
+</html>

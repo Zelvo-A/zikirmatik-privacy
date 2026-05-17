@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZikirMatik Pro - Dasar Privasi</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 24px; background: #121712; color: #e9efe8; line-height: 1.7; }
+    .container { max-width: 840px; margin: 0 auto; }
+    h1, h2, h3 { color: #ffffff; }
+    h1 { margin-top: 0; font-size: 28px; }
+    h2 { margin-top: 28px; font-size: 18px; border-bottom: 1px solid #29412b; padding-bottom: 6px; }
+    h3 { margin-top: 18px; font-size: 16px; color: #d8e6d6; }
+    p, li, td, th { font-size: 15px; }
+    .meta { color: #b6c3b6; margin-bottom: 20px; }
+    .note { background: #1d2b1f; border-left: 4px solid #7cc184; padding: 14px 16px; border-radius: 8px; margin: 18px 0; }
+    ul { padding-left: 22px; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; min-width: 320px; }
+    th, td { text-align: left; border-bottom: 1px solid #29412b; padding: 10px 8px; vertical-align: top; word-break: break-word; }
+    a { color: #9fd8ff; text-decoration: none; }
+    strong { color: #ffffff; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Dasar Privasi</h1>
+    <p class="meta">Kemas kini terakhir: 17 Mei 2026 · Tarikh kuat kuasa: 17 Mei 2026</p>
+
+    <div class="note">
+      <strong>Ringkasan:</strong> ZikirMatik Pro tidak menjual data peribadi anda, tidak mengumpul e-mel/telefon/nama sebenar, dan tidak memerlukan penciptaan akaun. Dalam penggunaan individu, semua data anda kekal pada peranti. Apabila menggunakan ciri Zikir Berkumpulan, hanya data kumpulan (nama samaran, nama kumpulan, pembilang) diproses dengan selamat pada Firebase Firestore. Telemetri iklan dan crash adalah tanpa nama.
+    </div>
+
+    <h2>1. Pengawal Data</h2>
+    <p>Aplikasi ini dibangunkan dan diterbitkan oleh Gökay Tutal (zelvoai@gmail.com). Pematuhan GDPR / Polisi Program Pembangun Google Play.</p>
+
+    <h2>2. Data yang Kami Kumpul dan Lokasi Penyimpanan</h2>
+
+    <h3>2.1 Data Disimpan Hanya pada Peranti Anda</h3>
+    <ul>
+      <li>Senarai zikir, zikir tersuai, dan sasaran</li>
+      <li>Sejarah pengiraan dan rekod sesi</li>
+      <li>Tetapan: tema, bahasa, fon, bunyi/getar, masa notifikasi</li>
+      <li>Status persetujuan onboarding dan dasar</li>
+      <li>Status pengesahan pembelian Premium tempatan</li>
+    </ul>
+
+    <h3>2.2 Analitik Tanpa Nama (Firebase)</h3>
+    <ul>
+      <li><strong>Firebase Analytics:</strong> Skrin dilihat, peristiwa penggunaan. Tiada data peribadi.</li>
+      <li><strong>Firebase Crashlytics:</strong> Jejak crash, model peranti, versi Android, Installation ID tanpa nama.</li>
+      <li><strong>Firebase App Check:</strong> Mengesahkan panggilan pelayan dari peranti/aplikasi sah.</li>
+    </ul>
+
+    <h3>2.3 Statistik Global Tanpa Nama</h3>
+    <p>Kemas kini pembilang agregat tanpa nama dihantar ke koleksi <code>_globalStats</code> di Firestore. Tanpa identiti pengguna, IP, atau pengecam peranti.</p>
+
+    <h3>2.4 Zikir Berkumpulan / Khatam (Data Awan)</h3>
+    <p>Ciri ini adalah <strong>pilihan</strong>:</p>
+    <ul>
+      <li><strong>Firebase Authentication (tanpa nama):</strong> UID rawak tanpa e-mel/telefon/nama sebenar.</li>
+      <li><strong>Firestore (us-west1):</strong> Nama kumpulan, niat, kod jemputan, nama samaran anda, kemajuan tugasan, senarai ahli, log audit.</li>
+      <li><strong>Cloud Functions:</strong> Operasi kritikal di pelayan.</li>
+      <li><strong>App Check:</strong> Menghalang pelanggan palsu.</li>
+    </ul>
+
+    <h3>2.5 Iklan (Google AdMob)</h3>
+    <ul>
+      <li>Tanpa langganan Premium, iklan sepanduk dan berganjaran dipaparkan.</li>
+      <li>AdMob mungkin memproses AD_ID dan maklumat sesi.</li>
+      <li>Untuk pengguna EEA/UK/Swiss, dialog persetujuan UMP dipaparkan.</li>
+      <li>Iklan diperibadikan tidak dipaparkan tanpa persetujuan anda.</li>
+    </ul>
+
+    <h3>2.6 Pembelian (Google Play Billing)</h3>
+    <p>Langganan Premium diproses melalui Google Play. ZikirMatik <strong>tidak melihat atau menyimpan</strong> nombor kad atau maklumat pembayaran.</p>
+
+    <h2>3. Lokasi (Kiblat Sahaja)</h2>
+    <p>Lokasi hanya digunakan dalam Kompas Kiblat pada peranti. <strong>Tidak pernah dihantar ke pelayan atau disimpan</strong>.</p>
+
+    <h2>4. Kamera (Imbasan QR Sahaja)</h2>
+    <p>Kamera hanya dibuka untuk mengimbas QR. <strong>Imej diproses masa nyata, tidak disimpan, tidak dihantar</strong>.</p>
+
+    <h2>5. Kebenaran</h2>
+    <div class="table-wrap"><table>
+      <tr><th>Kebenaran</th><th>Tujuan</th><th>Keluar peranti?</th></tr>
+      <tr><td>INTERNET</td><td>Komunikasi Firebase, AdMob, Cloud Functions</td><td>Ya</td></tr>
+      <tr><td>ACCESS_FINE/COARSE_LOCATION</td><td>Pengiraan Kiblat</td><td>Tidak</td></tr>
+      <tr><td>CAMERA</td><td>Menyertai kumpulan melalui QR</td><td>Tidak</td></tr>
+      <tr><td>POST_NOTIFICATIONS</td><td>Peringatan hadis</td><td>Tidak</td></tr>
+      <tr><td>VIBRATE</td><td>Maklum balas haptik</td><td>Tidak</td></tr>
+      <tr><td>RECEIVE_BOOT_COMPLETED</td><td>Memulihkan peringatan</td><td>Tidak</td></tr>
+      <tr><td>SCHEDULE_EXACT_ALARM</td><td>Peringatan hadis</td><td>Tidak</td></tr>
+      <tr><td>BILLING</td><td>Pembelian Premium</td><td>Tidak</td></tr>
+      <tr><td>AD_ID</td><td>ID AdMob</td><td>Ya</td></tr>
+    </table></div>
+
+    <h2>6. Perkhidmatan Pihak Ketiga</h2>
+    <ul>
+      <li><a href="https://firebase.google.com/support/privacy">Firebase (Analytics, Crashlytics, Auth, Firestore, Cloud Functions, App Check)</a></li>
+      <li><a href="https://policies.google.com/privacy">Google AdMob</a></li>
+      <li><a href="https://policies.google.com/privacy">Google Play Billing</a></li>
+      <li><a href="https://policies.google.com/privacy">Google User Messaging Platform (UMP)</a></li>
+    </ul>
+
+    <h2>7. Penyimpanan dan Hak Pemadaman</h2>
+    <ul>
+      <li><strong>Data peranti:</strong> dipadam apabila aplikasi dinyahpasang.</li>
+      <li><strong>Sejarah:</strong> boleh dipadam dari aplikasi.</li>
+      <li><strong>Data kumpulan:</strong> dipadam dari Firestore apabila keluar/memadam kumpulan.</li>
+      <li><strong>UID tanpa nama:</strong> mohon kepada <a href="mailto:zelvoai@gmail.com">zelvoai@gmail.com</a>, dipadam dalam 30 hari.</li>
+      <li><strong>Analytics:</strong> Firebase Analytics dipadam automatik selepas 14 bulan. Crashlytics: 90 hari.</li>
+    </ul>
+
+    <h2>8. Kanak-kanak</h2>
+    <p>Aplikasi tidak bertujuan untuk kanak-kanak di bawah 13 tahun. Tiada penciptaan akaun atau pengumpulan data peribadi.</p>
+
+    <h2>9. Keselamatan Data</h2>
+    <ul>
+      <li>Komunikasi Firebase TLS 1.2+ disulitkan.</li>
+      <li>Peraturan Firestore: setiap ahli hanya membaca kumpulannya.</li>
+      <li>Cloud Functions mengesahkan operasi kritikal di pelayan.</li>
+      <li>App Check menghalang pelanggan palsu.</li>
+    </ul>
+
+    <h2>10. Perubahan Dasar</h2>
+    <p>Jika dasar dikemas kini, tarikh "Kemas kini terakhir" akan diubah.</p>
+
+    <h2>11. Hubungi dan Hak GDPR</h2>
+    <p>Hak anda: akses, pembetulan, pemadaman, kemudahalihan, bantahan.</p>
+    <p><a href="mailto:zelvoai@gmail.com">zelvoai@gmail.com</a></p>
+  </div>
+</body>
+</html>

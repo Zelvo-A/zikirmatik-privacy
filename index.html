@@ -3,452 +3,160 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ZikirMatik Pro – Gizlilik Politikası / Privacy Policy</title>
+  <title>ZikirMatik Pro - Gizlilik Politikası</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #0f0f0f;
-      color: #e0e0e0;
-      line-height: 1.7;
-    }
-    .container {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 48px 24px 80px;
-    }
-    .lang-switcher {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 40px;
-    }
-    .lang-btn {
-      padding: 6px 18px;
-      border-radius: 999px;
-      border: 1px solid #444;
-      background: transparent;
-      color: #aaa;
-      cursor: pointer;
-      font-size: 14px;
-      transition: all 0.2s;
-    }
-    .lang-btn.active {
-      background: #7c6af7;
-      border-color: #7c6af7;
-      color: #fff;
-    }
-    .section { display: none; }
-    .section.active { display: block; }
-    .app-header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 36px;
-    }
-    .app-icon {
-      width: 56px;
-      height: 56px;
-      background: linear-gradient(135deg, #7c6af7, #a78bfa);
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 26px;
-    }
-    .app-title { font-size: 22px; font-weight: 700; color: #fff; }
-    .app-subtitle { font-size: 13px; color: #888; margin-top: 2px; }
-    h1 { font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 8px; }
-    .updated { font-size: 13px; color: #666; margin-bottom: 36px; }
-    h2 {
-      font-size: 16px;
-      font-weight: 600;
-      color: #c4b5fd;
-      margin: 32px 0 10px;
-      padding-bottom: 6px;
-      border-bottom: 1px solid #1e1e2e;
-    }
-    p { color: #bbb; margin-bottom: 10px; }
-    ul { color: #bbb; padding-left: 20px; margin-bottom: 10px; }
-    ul li { margin-bottom: 6px; }
-    .highlight {
-      background: #1a1a2e;
-      border-left: 3px solid #7c6af7;
-      padding: 14px 18px;
-      border-radius: 0 8px 8px 0;
-      margin: 16px 0;
-    }
-    .highlight p { margin: 0; color: #c4b5fd; font-weight: 500; }
-    .warning {
-      background: #1e1a0e;
-      border-left: 3px solid #f59e0b;
-      padding: 14px 18px;
-      border-radius: 0 8px 8px 0;
-      margin: 16px 0;
-    }
-    .warning p { margin: 0; color: #fcd34d; font-weight: 500; }
-    a { color: #7c6af7; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 12px 0 16px;
-      font-size: 14px;
-    }
-    th {
-      text-align: left;
-      color: #888;
-      font-weight: 500;
-      padding: 8px 12px;
-      border-bottom: 1px solid #2a2a2a;
-    }
-    td {
-      color: #bbb;
-      padding: 10px 12px;
-      border-bottom: 1px solid #1e1e1e;
-      vertical-align: top;
-    }
-    tr:last-child td { border-bottom: none; }
-    .footer {
-      margin-top: 56px;
-      padding-top: 24px;
-      border-top: 1px solid #1e1e1e;
-      font-size: 13px;
-      color: #555;
-      text-align: center;
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 24px; background: #121712; color: #e9efe8; line-height: 1.7; }
+    .container { max-width: 840px; margin: 0 auto; }
+    h1, h2, h3 { color: #ffffff; }
+    h1 { margin-top: 0; font-size: 28px; }
+    h2 { margin-top: 28px; font-size: 18px; border-bottom: 1px solid #29412b; padding-bottom: 6px; }
+    h3 { margin-top: 18px; font-size: 16px; color: #d8e6d6; }
+    p, li, td, th { font-size: 15px; }
+    .meta { color: #b6c3b6; margin-bottom: 20px; }
+    .note { background: #1d2b1f; border-left: 4px solid #7cc184; padding: 14px 16px; border-radius: 8px; margin: 18px 0; }
+    .warn { background: #2b2419; border-left: 4px solid #e0a631; padding: 14px 16px; border-radius: 8px; margin: 18px 0; }
+    ul { padding-left: 22px; }
+    .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; min-width: 320px; }
+    th, td { text-align: left; border-bottom: 1px solid #29412b; padding: 10px 8px; vertical-align: top; word-break: break-word; }
+    a { color: #9fd8ff; text-decoration: none; }
+    strong { color: #ffffff; }
   </style>
 </head>
 <body>
-<div class="container">
-
-  <div class="lang-switcher">
-    <button class="lang-btn active" onclick="setLang('tr', event)">Türkçe</button>
-    <button class="lang-btn" onclick="setLang('en', event)">English</button>
-  </div>
-
-  <!-- TÜRKÇE -->
-  <div id="section-tr" class="section active">
-    <div class="app-header">
-      <div class="app-icon">📿</div>
-      <div>
-        <div class="app-title">ZikirMatik Pro</div>
-        <div class="app-subtitle">Android Uygulaması</div>
-      </div>
-    </div>
-
+  <div class="container">
     <h1>Gizlilik Politikası</h1>
-    <p class="updated">Son güncelleme: 3 Mayıs 2026</p>
+    <p class="meta">Son güncelleme: 17 Mayıs 2026 · Yürürlük tarihi: 17 Mayıs 2026</p>
 
-    <div class="highlight">
-      <p>ZikirMatik Pro, kişisel verilerinizi satmaz. Sayım geçmişiniz, zikir listeniz ve tercihleriniz yalnızca cihazınızda saklanır. Uygulama iyileştirme amacıyla anonim ve toplu zikir kullanım istatistikleri sunucuya iletilir. Hatim/Grup özelliğini kullanırsanız grup verileri Firebase Firestore'da saklanır. Uygulama, sürdürülebilirlik amacıyla Google AdMob aracılığıyla banner reklam gösterir.</p>
+    <div class="note">
+      <strong>Özet:</strong> ZikirMatik Pro kişisel verilerinizi satmaz, e-posta/telefon/gerçek ad toplamaz ve hesap oluşturmanızı gerektirmez. Tek başına kullanımda tüm verileriniz cihazınızda kalır. Grup Zikir özelliğini kullandığınızda yalnızca grup ile ilgili veriler (takma ad, grup adı, görev sayaçları) Firebase Firestore'da güvenli şekilde işlenir. Reklam ve kilitlenme telemetrisi anonimdir.
     </div>
 
-    <h2>Cihazda Saklanan Veriler</h2>
-    <p>Aşağıdaki veriler <strong>yalnızca cihazınızda</strong> saklanır, herhangi bir sunucuya gönderilmez:</p>
+    <h2>1. Sorumlu</h2>
+    <p>Bu uygulama Gökay Tutal (zelvoai@gmail.com) tarafından geliştirilip yayımlanmaktadır. Veri sorumlusu sıfatıyla KVKK / GDPR / Google Play Developer Programı politikalarına uygunluk taahhüt edilir.</p>
+
+    <h2>2. Topladığımız Veriler ve Saklama Yeri</h2>
+
+    <h3>2.1 Yalnızca Cihazınızda Saklanan Veriler</h3>
+    <p>Bu veriler sunucuya gönderilmez ve sadece sizin cihazınızda Room veritabanı ve DataStore üzerinde tutulur:</p>
     <ul>
-      <li>Zikir listesi ve özelleştirmeleriniz</li>
-      <li>Sayım geçmişi ve oturum kayıtları</li>
-      <li>Uygulama ayarları (tema, titreşim, bildirim tercihleri)</li>
+      <li>Zikir listeniz, özel zikir oluşturmalarınız ve hedefler</li>
+      <li>Sayım geçmişi ve oturum kayıtları (tarih, sayı, hangi zikir)</li>
+      <li>Uygulama ayarları: tema, dil, font, ses/titreşim tercihleri, günlük hadis bildirim saati</li>
+      <li>Onboarding ve gizlilik politikası onay durumu</li>
+      <li>Premium satın alma yerel doğrulama durumu (Play Billing tokeni)</li>
     </ul>
 
-    <h2>Kilitlenme Raporlaması (Firebase Crashlytics)</h2>
-    <div class="warning">
-      <p>Uygulama beklenmedik şekilde kapandığında anonim bir hata raporu Google Firebase sunucularına iletilir.</p>
-    </div>
-    <p>Bu rapor aşağıdaki bilgileri içerir:</p>
+    <h3>2.2 Anonim Analitik ve Telemetri (Firebase)</h3>
     <ul>
-      <li>Cihaz modeli ve üreticisi</li>
-      <li>Android sürümü ve uygulama sürümü</li>
-      <li>Kilitlenme anındaki teknik hata izi (stack trace)</li>
-      <li>Anonim Firebase Kurulum Kimliği</li>
-    </ul>
-    <p>Bu veriler kişisel kimlik bilgisi içermez, üçüncü taraflarla paylaşılmaz ve yalnızca hata düzeltme amacıyla kullanılır. Firebase'in gizlilik politikasına <a href="https://firebase.google.com/support/privacy" target="_blank">buradan</a> ulaşabilirsiniz.</p>
-
-    <h2>İzinler</h2>
-    <table>
-      <tr>
-        <th>İzin</th>
-        <th>Kullanım Amacı</th>
-      </tr>
-      <tr>
-        <td><strong>Yaklaşık Konum</strong></td>
-        <td>Kıble yönü hesaplama — yalnızca uygulama açıkken, sunucuya gönderilmez</td>
-      </tr>
-      <tr>
-        <td><strong>Hassas Konum</strong></td>
-        <td>Daha doğru kıble hesaplama — yalnızca uygulama açıkken, sunucuya gönderilmez</td>
-      </tr>
-      <tr>
-        <td><strong>Bildirim Gönderme</strong></td>
-        <td>Günlük hadis hatırlatıcısı — isteğe bağlı, ayarlardan kapatılabilir</td>
-      </tr>
-      <tr>
-        <td><strong>Önyükleme Alımı</strong></td>
-        <td>Cihaz yeniden başlatıldığında bildirim zamanlamasını geri yüklemek için</td>
-      </tr>
-      <tr>
-        <td><strong>Tam Zamanlı Alarm</strong></td>
-        <td>Günlük hadis bildiriminin tam saatinde gönderilmesi için</td>
-      </tr>
-      <tr>
-        <td><strong>Titreşim</strong></td>
-        <td>Zikir sayımında titreşim geri bildirimi</td>
-      </tr>
-      <tr>
-        <td><strong>İnternet</strong></td>
-        <td>Firebase Crashlytics hata raporlaması ve Google AdMob reklam sunumu için kullanılır</td>
-      </tr>
-      <tr>
-        <td><strong>Reklam Kimliği (AD_ID)</strong></td>
-        <td>Google AdMob'un kişiselleştirilmemiş reklam sunumu için eriştiği anonim cihaz tanımlayıcısı</td>
-      </tr>
-    </table>
-
-    <h2>Zikir Kullanım İstatistikleri</h2>
-    <div class="warning">
-      <p>Uygulamayı geliştirmek amacıyla anonim ve toplu zikir kullanım verileri sunucuya iletilir:</p>
-    </div>
-    <ul>
-      <li>Sayım yapıldığında hangi zikirin kullanıldığı ve günlük toplam sayım miktarı Firebase Firestore'a anonim olarak yazılır</li>
-      <li>Bu veriler kimliğinizle ilişkilendirilmez; hiçbir kişisel tanımlayıcı (isim, e-posta, cihaz kimliği) saklanmaz</li>
-      <li>Hangi zikirlerin ne sıklıkla kullanıldığını anlamak ve uygulama içeriklerini iyileştirmek için kullanılır</li>
+      <li><strong>Firebase Analytics:</strong> Açılan ekranlar, tıklanan butonlar, zikir tamamlandı/kıble açıldı/onboarding bitti gibi kullanım olayları. İçerik veya kişisel veri içermez.</li>
+      <li><strong>Firebase Crashlytics:</strong> Çökme yığın izleri, cihaz modeli, Android sürümü, anonim Firebase Installation ID.</li>
+      <li><strong>Firebase Performance / App Check (DEBUG token sadece debug build'lerde):</strong> Sunucu çağrılarının cihazdan geldiğini doğrulamak için.</li>
     </ul>
 
-    <h2>Hatim / Grup Özelliği (Bulut Verileri)</h2>
-    <p>Hatim organizasyonu özelliğini kullandığınızda aşağıdaki veriler Google Firebase altyapısında işlenir:</p>
-    <ul>
-      <li><strong>Firebase Authentication (Anonim):</strong> Her cihaza benzersiz bir anonim kullanıcı kimliği atanır. Bu kimlik e-posta, telefon veya gerçek isim içermez.</li>
-      <li><strong>Firebase Firestore:</strong> Grup başlığı, niyet açıklaması, üye takma adları, görev atamaları ve zikir ilerleme sayaçları saklanır. Bu veriler yalnızca aynı grubun üyeleriyle paylaşılır.</li>
-      <li><strong>Firebase Cloud Functions:</strong> Gruba katılma, görev tamamlama ve üye yönetimi gibi işlemler sunucu tarafında doğrulama gerektiren Cloud Functions aracılığıyla yürütülür.</li>
-    </ul>
-    <p>Grubu siler veya gruptan ayrılırsanız, Firestore'daki grup verileriniz ve ilerleme bilgileriniz silinir.</p>
+    <h3>2.3 Anonim Global İstatistikler</h3>
+    <p>Hangi zikirlerin global olarak en çok çekildiğini görmek için Firebase Firestore'daki <code>_globalStats</code> koleksiyonuna anonim, toplu sayaç güncellemeleri gönderilir. Bu veriler kullanıcı kimliği, IP veya cihaz tanımlayıcı taşımaz; yalnızca "X zikirine bugün +N sayım eklendi" gibi toplu agregasyondur.</p>
 
-    <h2>Üçüncü Taraf Hizmetler</h2>
-    <table>
-      <tr>
-        <th>Hizmet</th>
-        <th>Amaç</th>
-        <th>Gizlilik Politikası</th>
-      </tr>
-      <tr>
-        <td>Firebase Crashlytics (Google)</td>
-        <td>Anonim hata raporlaması</td>
-        <td><a href="https://firebase.google.com/support/privacy" target="_blank">Bağlantı</a></td>
-      </tr>
-      <tr>
-        <td>Firebase Analytics (Google)</td>
-        <td>Anonim kullanım analitiği</td>
-        <td><a href="https://firebase.google.com/support/privacy" target="_blank">Bağlantı</a></td>
-      </tr>
-      <tr>
-        <td>Firebase Firestore (Google)</td>
-        <td>Anonim zikir kullanım istatistikleri ve grup/ilerleme verileri (Hatim özelliği)</td>
-        <td><a href="https://firebase.google.com/support/privacy" target="_blank">Bağlantı</a></td>
-      </tr>
-      <tr>
-        <td>Firebase Authentication (Google)</td>
-        <td>Anonim kullanıcı kimliği (Hatim özelliği)</td>
-        <td><a href="https://firebase.google.com/support/privacy" target="_blank">Bağlantı</a></td>
-      </tr>
-      <tr>
-        <td>Firebase Cloud Functions (Google)</td>
-        <td>Sunucu tarafı grup işlemleri (Hatim özelliği)</td>
-        <td><a href="https://firebase.google.com/support/privacy" target="_blank">Bağlantı</a></td>
-      </tr>
-      <tr>
-        <td>Google AdMob</td>
-        <td>Banner reklam gösterimi — reklam kimliği kullanılır, kişisel veriler satılmaz</td>
-        <td><a href="https://policies.google.com/privacy" target="_blank">Bağlantı</a></td>
-      </tr>
-    </table>
-
-    <h2>Veri Silme</h2>
+    <h3>2.4 Grup Zikir / Hatim Özelliği (Bulut Verileri)</h3>
+    <p>Bu özellik <strong>opsiyoneldir</strong>. Yalnızca bir grup oluşturduğunuzda veya bir gruba katıldığınızda aktive olur. Aşağıdaki veriler Firebase altyapısında işlenir:</p>
     <ul>
-      <li>Uygulamayı kaldırdığınızda cihazda saklanan tüm veriler otomatik olarak silinir</li>
-      <li>Crashlytics verileri Google'ın politikasına göre saklanır (yaklaşık 90 gün)</li>
-      <li>Sayım geçmişi ve kayıtlar uygulama içinden manuel olarak silinebilir</li>
-      <li>Hatim grubundan ayrıldığınızda veya grubu sildiğinizde Firestore'daki verileriniz kaldırılır</li>
-      <li>Firebase anonim kimliğinizin silinmesini talep etmek için <a href="mailto:tutalgokay@gmail.com">tutalgokay@gmail.com</a> adresine yazabilirsiniz</li>
+      <li><strong>Firebase Authentication (Anonim):</strong> Cihazınıza otomatik atanan rastgele UID. E-posta/telefon/gerçek isim içermez. Uygulamayı silene veya kimlik silme talebinde bulunana kadar geçerlidir.</li>
+      <li><strong>Firestore (us-west1 bölgesi):</strong>
+        <ul>
+          <li>Grup başlığı, niyet açıklaması (örn. "Vefat eden anneanneme"), gizlilik ayarı (açık/özel)</li>
+          <li>Davet kodu (6 karakter) ve oluşturulma tarihi</li>
+          <li>Görev tanımları (tip: Tehlil/Salavat/İstiğfar, hedef sayı, atama durumu)</li>
+          <li>Üye listesi: <em>sadece sizin girdiğiniz</em> takma ad + anonim UID + rol (yönetici / katılımcı) + katılım tarihi</li>
+          <li>Görev ilerleme sayaçları (kaç tane, ne zaman sayıldı, hız analizi için)</li>
+          <li>Audit log: yönetici işlemleri (kim hangi görevi onayladı / kimi çıkardı)</li>
+          <li>Premium kapasite artış girişimleri (reklam izleme / Premium satın alma kayıtları)</li>
+        </ul>
+      </li>
+      <li><strong>Cloud Functions (sunucu tarafı):</strong> Aşağıdaki kritik işlemler sunucu üzerinde transaction olarak yürütülür:
+        <code>createHatimGroup</code>, <code>joinHatimGroupWithCode</code>, <code>assignTask</code>, <code>completeTask</code>, <code>approveTask</code>, <code>rotateJoinCode</code>, <code>addExtraReading</code>, <code>removeParticipant</code>, <code>updateGroupCapacity</code>, <code>boostGroupCapacityWithAd</code>, <code>leaveGroup</code>, <code>deleteGroup</code>.
+        Bu işlemler dolandırıcılığı önlemek, kapasite/üyelik kurallarını uygulamak ve sayım manipülasyonlarını engellemek içindir.
+      </li>
+      <li><strong>App Check (Play Integrity / SafetyNet):</strong> Sunucu çağrılarının gerçek bir cihazdan ve uygulamadan geldiğini doğrular; otomatik bot/spam girişlerini önler.</li>
     </ul>
 
-    <h2>Çocukların Gizliliği</h2>
-    <p>Bu uygulama 13 yaşın altındaki çocuklardan bilerek veri toplamaz.</p>
+    <h3>2.5 Reklamlar (Google AdMob)</h3>
+    <p>Premium abone değilseniz banner reklamlar ve kapasiteyi artırmak için ödüllü reklamlar gösterilir.</p>
+    <ul>
+      <li>Google AdMob, kişiselleştirilmiş veya kişiselleştirilmemiş reklam göstermek için Android Reklam Kimliği'ni (AD_ID) ve oturum bilgilerini işleyebilir.</li>
+      <li>AB / Birleşik Krallık / İsviçre kullanıcıları için UMP (User Messaging Platform) onay diyaloğu gösterilir.</li>
+      <li>Onayınız olmadan kişiselleştirilmiş reklam gösterilmez.</li>
+    </ul>
 
-    <h2>Değişiklikler</h2>
-    <p>Bu politika güncellendiğinde bu sayfa yenilenir. Uygulamayı kullanmaya devam etmek güncel politikayı kabul etmek anlamına gelir.</p>
+    <h3>2.6 Satın Almalar (Google Play Billing)</h3>
+    <p>Premium aboneliği Google Play Billing üzerinden işlenir. ZikirMatik kart numaranızı, ödeme bilgilerinizi <strong>görmez veya saklamaz</strong>. Satın alma sonucu (premium aktif/değil) Google Play'den alınan token ile doğrulanır. Hangi cihazın premium olduğu Firestore <code>users/{uid}/isPremium</code> alanında saklanır.</p>
 
-    <h2>İletişim</h2>
-    <p>Sorularınız için: <a href="mailto:tutalgokay@gmail.com">tutalgokay@gmail.com</a></p>
+    <h2>3. Konum Verisi (Sadece Kıble)</h2>
+    <p>Kıble pusulasını açtığınızda yaklaşık ve hassas konum kullanılır. Konum yalnızca cihazınızda hesaplama için kullanılır; <strong>hiçbir sunucuya gönderilmez ve saklanmaz</strong>.</p>
+
+    <h2>4. Kamera Verisi (Sadece QR Tarama)</h2>
+    <p>Davet kodu QR taramak istediğinizde kamera açılır. Kameradan alınan görüntü <strong>cihazda gerçek zamanlı işlenir, kaydedilmez ve dışarı gönderilmez</strong>. Yalnızca QR kod metni okunur.</p>
+
+    <h2>5. İzinler</h2>
+    <div class="table-wrap"><table>
+      <tr><th>İzin</th><th>Amaç</th><th>Veri Dışarı Çıkar mı?</th></tr>
+      <tr><td>INTERNET</td><td>Firebase, AdMob, Cloud Functions iletişimi</td><td>Evet (yukarıda belirtilen veriler)</td></tr>
+      <tr><td>ACCESS_FINE_LOCATION / COARSE_LOCATION</td><td>Kıble yönü hesaplama</td><td>Hayır</td></tr>
+      <tr><td>CAMERA</td><td>QR kod ile gruba katılma</td><td>Hayır</td></tr>
+      <tr><td>POST_NOTIFICATIONS</td><td>Günlük hadis ve sayım bildirimleri</td><td>Hayır</td></tr>
+      <tr><td>VIBRATE</td><td>Sayım sırasında dokunsal geri bildirim</td><td>Hayır</td></tr>
+      <tr><td>RECEIVE_BOOT_COMPLETED</td><td>Cihaz yeniden başladıktan sonra bildirim zamanlamasını yeniden kurma</td><td>Hayır</td></tr>
+      <tr><td>SCHEDULE_EXACT_ALARM</td><td>Günlük hadis hatırlatıcısını tam zamanında tetikleme</td><td>Hayır</td></tr>
+      <tr><td>com.android.vending.BILLING</td><td>Google Play üzerinden Premium satın alma</td><td>Hayır (Google Play yönetir)</td></tr>
+      <tr><td>com.google.android.gms.permission.AD_ID</td><td>AdMob reklam kimliği erişimi</td><td>Evet (sadece AdMob'a)</td></tr>
+    </table></div>
+
+    <h2>6. Yaptığımız İşlemler — Kısa Açıklama</h2>
+    <ul>
+      <li><strong>Sayım:</strong> Tap sayısı yerel veritabanına yazılır; her 10 tap'te bir anonim global istatistik sayacı güncellenir.</li>
+      <li><strong>Hatim Grup oluşturma:</strong> Cloud Function ile transaction yapılır; grup ve davet kodu Firestore'a yazılır; anonim UID grup yöneticisi olarak işaretlenir.</li>
+      <li><strong>Gruba katılma:</strong> Davet kodu Cloud Function üzerinden doğrulanır; takma adınız ve anonim UID üye olarak eklenir; grup kapasite kontrolü yapılır.</li>
+      <li><strong>Görev tamamlama:</strong> Sayım sonucu Cloud Function'a iletilir; sayım hızı şüpheli görünürse görev "incelemeye" alınır ve grup yöneticisi onayı beklenir.</li>
+      <li><strong>Üye çıkarma / grup silme:</strong> Yönetici işlemleri audit log'a kaydedilir; ayrılan üyenin atanmış görevi serbest bırakılır.</li>
+      <li><strong>Premium satın alma:</strong> Google Play Billing token'ı doğrulanır, <code>users/{uid}/isPremium</code> alanı güncellenir.</li>
+      <li><strong>Reklam izleyerek kapasite artırma:</strong> Ödüllü reklam tamamlandığında Cloud Function ile grup kapasitesi +5 artırılır (24 saat içinde tekrar edilebilir).</li>
+    </ul>
+
+    <h2>7. Üçüncü Taraf Hizmetler</h2>
+    <ul>
+      <li><a href="https://firebase.google.com/support/privacy">Firebase (Analytics, Crashlytics, Auth, Firestore, Cloud Functions, App Check)</a></li>
+      <li><a href="https://policies.google.com/privacy">Google AdMob</a></li>
+      <li><a href="https://policies.google.com/privacy">Google Play Billing</a></li>
+      <li><a href="https://policies.google.com/privacy">Google User Messaging Platform (UMP)</a></li>
+    </ul>
+
+    <h2>8. Veri Saklama Süresi ve Silme Hakkınız</h2>
+    <ul>
+      <li><strong>Cihaz verileri:</strong> Uygulamayı kaldırdığınızda silinir.</li>
+      <li><strong>Sayım geçmişi:</strong> Uygulama içinden manuel olarak silinebilir.</li>
+      <li><strong>Grup verileri:</strong> Gruptan ayrıldığınızda üyelik kaydı "removed" olarak işaretlenir, görevleriniz serbest bırakılır. Grup yöneticisi grubu silerse tüm üye/görev/ilerleme verileri Firestore'dan silinir.</li>
+      <li><strong>Anonim UID silme:</strong> <a href="mailto:zelvoai@gmail.com">zelvoai@gmail.com</a> adresine UID veya davet kodu bilgisi ile birlikte talep gönderebilirsiniz; 30 gün içinde silinir.</li>
+      <li><strong>Analitik veriler:</strong> Firebase Analytics 14 ay sonra otomatik silinir. Crashlytics çökme verileri 90 gün saklanır.</li>
+      <li><strong>Global istatistikler:</strong> Kişiselleştirilemediği için süresiz tutulur (toplu agregasyon).</li>
+    </ul>
+
+    <h2>9. Çocukların Gizliliği</h2>
+    <p>Uygulama 13 yaş altı çocuklara yönelik değildir. Hesap oluşturma veya kişisel veri toplama içermediğinden COPPA / GDPR-K kapsamında riskli kategoride değildir. Bir çocuğun veri gönderdiğini düşünüyorsanız e-postayla bize bildirin; verileri sileriz.</p>
+
+    <h2>10. Veri Güvenliği</h2>
+    <ul>
+      <li>Firebase iletişimi TLS 1.2+ ile şifrelidir.</li>
+      <li>Firestore Security Rules ile her üyenin yalnızca üyesi olduğu grupları okuyabildiği zorunlu kılınmıştır.</li>
+      <li>Cloud Functions kritik işlemleri sunucu tarafında doğrular; Firestore'a doğrudan yazım büyük ölçüde kısıtlıdır.</li>
+      <li>App Check ile sahte istemciler engellenir.</li>
+      <li>Premium kapasite artırma ve ödüllü reklam işlemleri rate limit + cooldown ile korunur.</li>
+    </ul>
+
+    <h2>11. Politikadaki Değişiklikler</h2>
+    <p>Bu politika güncellenirse bu sayfadaki "Son güncelleme" tarihi değiştirilir. Önemli değişikliklerde uygulama içi bildirim gösteririz.</p>
+
+    <h2>12. İletişim ve KVKK / GDPR Hakları</h2>
+    <p>Aşağıdaki haklarınız vardır: erişim, düzeltme, silme, işlemeyi kısıtlama, veri taşınabilirliği, itiraz. Talepleriniz için:</p>
+    <p><a href="mailto:zelvoai@gmail.com">zelvoai@gmail.com</a></p>
   </div>
-
-  <!-- ENGLISH -->
-  <div id="section-en" class="section">
-    <div class="app-header">
-      <div class="app-icon">📿</div>
-      <div>
-        <div class="app-title">ZikirMatik Pro</div>
-        <div class="app-subtitle">Android Application</div>
-      </div>
-    </div>
-
-    <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: May 3, 2026</p>
-
-    <div class="highlight">
-      <p>ZikirMatik Pro does not sell your personal data. Your counting history, dhikr list, and preferences are stored exclusively on your device. Anonymous aggregate dhikr usage statistics are sent to the server for app improvement. If you use the Hatim/Group feature, group data is stored on Firebase Firestore. The app displays banner ads via Google AdMob to support ongoing development.</p>
-    </div>
-
-    <h2>On-Device Data</h2>
-    <p>The following data is stored <strong>on your device only</strong> and is never sent to any server:</p>
-    <ul>
-      <li>Your dhikr list and customizations</li>
-      <li>Count history and session records</li>
-      <li>App settings (theme, vibration, notification preferences)</li>
-    </ul>
-
-    <h2>Crash Reporting (Firebase Crashlytics)</h2>
-    <div class="warning">
-      <p>When the app crashes unexpectedly, an anonymous error report is sent to Google Firebase servers.</p>
-    </div>
-    <p>This report contains the following information:</p>
-    <ul>
-      <li>Device model and manufacturer</li>
-      <li>Android version and app version</li>
-      <li>Technical stack trace at the time of crash</li>
-      <li>Anonymous Firebase Installation ID</li>
-    </ul>
-    <p>This data contains no personally identifiable information, is not shared with third parties, and is used solely for bug fixing. You can review Firebase's privacy policy <a href="https://firebase.google.com/support/privacy" target="_blank">here</a>.</p>
-
-    <h2>Permissions</h2>
-    <table>
-      <tr>
-        <th>Permission</th>
-        <th>Purpose</th>
-      </tr>
-      <tr>
-        <td><strong>Approximate Location</strong></td>
-        <td>Qibla direction calculation — only while app is active, never stored remotely</td>
-      </tr>
-      <tr>
-        <td><strong>Precise Location</strong></td>
-        <td>More accurate qibla calculation — only while app is active, never stored remotely</td>
-      </tr>
-      <tr>
-        <td><strong>Post Notifications</strong></td>
-        <td>Daily hadith reminder — optional, can be disabled in settings</td>
-      </tr>
-      <tr>
-        <td><strong>Receive Boot Completed</strong></td>
-        <td>Restore notification schedule after device restart</td>
-      </tr>
-      <tr>
-        <td><strong>Schedule Exact Alarm</strong></td>
-        <td>Deliver daily hadith notification at the precise configured time</td>
-      </tr>
-      <tr>
-        <td><strong>Vibrate</strong></td>
-        <td>Haptic feedback during dhikr counting</td>
-      </tr>
-      <tr>
-        <td><strong>Internet</strong></td>
-        <td>Used for Firebase Crashlytics crash reporting and Google AdMob ad delivery</td>
-      </tr>
-      <tr>
-        <td><strong>Ad ID (AD_ID)</strong></td>
-        <td>Anonymous device identifier accessed by Google AdMob for non-personalized ad delivery</td>
-      </tr>
-    </table>
-
-    <h2>Dhikr Usage Statistics</h2>
-    <div class="warning">
-      <p>To improve the app, anonymous aggregate dhikr usage data is sent to the server:</p>
-    </div>
-    <ul>
-      <li>Each time you count, the dhikr name and daily total count are written anonymously to Firebase Firestore</li>
-      <li>This data is not linked to your identity — no personal identifier (name, email, device ID) is stored</li>
-      <li>Used to understand which dhikrs are used most frequently and to improve app content</li>
-    </ul>
-
-    <h2>Hatim / Group Feature (Cloud Data)</h2>
-    <p>When you use the Hatim group organisation feature, the following data is processed on Google Firebase infrastructure:</p>
-    <ul>
-      <li><strong>Firebase Authentication (Anonymous):</strong> Each device is assigned a unique anonymous user ID containing no email, phone number, or real name.</li>
-      <li><strong>Firebase Firestore:</strong> Group title, intention description, member nicknames, task assignments, and dhikr progress counters are stored and shared only with members of the same group.</li>
-      <li><strong>Firebase Cloud Functions:</strong> Operations such as joining a group, completing a task, and managing members are executed through server-side Cloud Functions.</li>
-    </ul>
-    <p>If you delete the group or leave it, your group data and progress records are removed from Firestore.</p>
-
-    <h2>Third-Party Services</h2>
-    <table>
-      <tr>
-        <th>Service</th>
-        <th>Purpose</th>
-        <th>Privacy Policy</th>
-      </tr>
-      <tr>
-        <td>Firebase Crashlytics (Google)</td>
-        <td>Anonymous crash reporting</td>
-        <td><a href="https://firebase.google.com/support/privacy" target="_blank">Link</a></td>
-      </tr>
-      <tr>
-        <td>Firebase Analytics (Google)</td>
-        <td>Anonymous usage analytics</td>
-        <td><a href="https://firebase.google.com/support/privacy" target="_blank">Link</a></td>
-      </tr>
-      <tr>
-        <td>Firebase Firestore (Google)</td>
-        <td>Anonymous dhikr usage statistics and group/progress data (Hatim feature)</td>
-        <td><a href="https://firebase.google.com/support/privacy" target="_blank">Link</a></td>
-      </tr>
-      <tr>
-        <td>Firebase Authentication (Google)</td>
-        <td>Anonymous user identity (Hatim feature)</td>
-        <td><a href="https://firebase.google.com/support/privacy" target="_blank">Link</a></td>
-      </tr>
-      <tr>
-        <td>Firebase Cloud Functions (Google)</td>
-        <td>Server-side group operations (Hatim feature)</td>
-        <td><a href="https://firebase.google.com/support/privacy" target="_blank">Link</a></td>
-      </tr>
-      <tr>
-        <td>Google AdMob</td>
-        <td>Banner ad display — uses advertising ID, personal data is not sold</td>
-        <td><a href="https://policies.google.com/privacy" target="_blank">Link</a></td>
-      </tr>
-    </table>
-
-    <h2>Data Deletion</h2>
-    <ul>
-      <li>Uninstalling the app automatically deletes all on-device data</li>
-      <li>Crashlytics data is retained per Google's policy (approximately 90 days)</li>
-      <li>Counting history and records can be manually deleted within the app</li>
-      <li>Leaving or deleting a Hatim group removes your Firestore data for that group</li>
-      <li>To request deletion of your Firebase anonymous ID, contact <a href="mailto:tutalgokay@gmail.com">tutalgokay@gmail.com</a></li>
-    </ul>
-
-    <h2>Children's Privacy</h2>
-    <p>This application does not knowingly collect data from children under 13.</p>
-
-    <h2>Changes</h2>
-    <p>When this policy is updated, this page will be revised. Continued use of the app constitutes acceptance of the current policy.</p>
-
-    <h2>Contact</h2>
-    <p>For questions: <a href="mailto:tutalgokay@gmail.com">tutalgokay@gmail.com</a></p>
-  </div>
-
-  <div class="footer">
-    &copy; 2026 ZikirMatik Pro &middot; <a href="mailto:tutalgokay@gmail.com">tutalgokay@gmail.com</a>
-  </div>
-
-</div>
-
-<script>
-  function setLang(lang, event) {
-    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById('section-' + lang).classList.add('active');
-    event.target.classList.add('active');
-  }
-</script>
 </body>
 </html>
