@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZikirMatik Pro - Data Deletion</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 24px;
+      background: #121712;
+      color: #e9efe8;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.7;
+    }
+    .container { max-width: 840px; margin: 0 auto; }
+    h1, h2 { color: #ffffff; }
+    h1 { margin-top: 0; font-size: 30px; }
+    h2 { margin-top: 30px; font-size: 20px; border-bottom: 1px solid #29412b; padding-bottom: 8px; }
+    p, li { font-size: 16px; }
+    a { color: #9fd8ff; text-decoration: none; }
+    code { background: #1d2b1f; padding: 2px 6px; border-radius: 5px; }
+    .meta { color: #b6c3b6; margin-bottom: 20px; }
+    .note { background: #1d2b1f; border-left: 4px solid #7cc184; padding: 14px 16px; border-radius: 8px; margin: 18px 0; }
+    .warn { background: #2b2419; border-left: 4px solid #e0a631; padding: 14px 16px; border-radius: 8px; margin: 18px 0; }
+    ul { padding-left: 22px; }
+    strong { color: #ffffff; }
+    .lang { margin-top: 34px; padding-top: 22px; border-top: 1px solid #29412b; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>ZikirMatik Pro Veri Silme</h1>
+    <p class="meta">Son guncelleme: 17 Mayis 2026</p>
+
+    <div class="note">
+      ZikirMatik Pro e-posta, telefon veya gercek ad ile hesap olusturmaz. Grup/Hatim ozelligi kullanildiginda Firebase tarafinda yalnizca anonim kullanici ID'si ve grup verileri islenir.
+    </div>
+
+    <h2>Uygulama icinden veri silme</h2>
+    <p>Kullanicilar bulut verilerini uygulama icinden silebilir:</p>
+    <ul>
+      <li>Uygulamayi acin.</li>
+      <li><strong>Ayarlar</strong> ekranina gidin.</li>
+      <li><strong>Bulut verilerini sil</strong> secenegine dokunun.</li>
+      <li>Uyari metnini okuyup onaylayin.</li>
+    </ul>
+
+    <p>Bu islem Firestore ve Firebase Authentication tarafinda kullaniciya bagli bulut verilerini siler.</p>
+
+    <h2>Silinen veriler</h2>
+    <ul>
+      <li>Anonim Firebase Authentication kullanici hesabi.</li>
+      <li><code>users/{uid}</code> premium bulut yetki kaydi.</li>
+      <li><code>userGroups/{uid}</code> grup uyelik referanslari.</li>
+      <li>Hatim/grup uyelik kayitlari.</li>
+      <li>Kullaniciya ait gorev ilerlemeleri.</li>
+      <li>Kullaniciya ait fazla okuma kayitlari.</li>
+      <li>Kullaniciya ait supheli islem, admin uyarisi ve denetim kayitlari.</li>
+      <li><code>_userTrust/{uid}</code> guven/koruma kaydi.</li>
+    </ul>
+
+    <div class="warn">
+      Silme islemi geri alinamaz. Kullanici bir grubun sahibiyse, ilgili grup kapatilabilir ve diger uyelerin grup erisimi etkilenebilir. Cihazdaki yerel sayac gecmisi bu bulut silme islemiyle silinmez; yerel veriler icin uygulama verileri temizlenebilir veya uygulama kaldirilabilir.
+    </div>
+
+    <h2>Uygulamaya erisemiyorsaniz</h2>
+    <p>Uygulamaya erisemiyorsaniz, veri silme talebinizi asagidaki e-posta adresine iletebilirsiniz. Kayitlari bulabilmemiz icin varsa davet kodu, grup adi veya takma ad bilgisini ekleyin.</p>
+    <p><a href="mailto:zelvoai@gmail.com">zelvoai@gmail.com</a></p>
+    <p>Manuel talepler 30 gun icinde degerlendirilir.</p>
+
+    <div class="lang">
+      <h1>Data Deletion for ZikirMatik Pro</h1>
+      <p class="meta">Last updated: May 17, 2026</p>
+
+      <div class="note">
+        ZikirMatik Pro does not create accounts with email, phone number, or real name. When the Group/Hatim feature is used, Firebase processes only an anonymous user ID and group-related data.
+      </div>
+
+      <h2>Delete data inside the app</h2>
+      <p>Users can delete their cloud data from inside the app:</p>
+      <ul>
+        <li>Open the app.</li>
+        <li>Go to <strong>Settings</strong>.</li>
+        <li>Tap <strong>Delete cloud data</strong>.</li>
+        <li>Read the warning and confirm.</li>
+      </ul>
+
+      <p>This deletes the user's cloud data from Firestore and Firebase Authentication.</p>
+
+      <h2>Data deleted</h2>
+      <ul>
+        <li>Anonymous Firebase Authentication user account.</li>
+        <li><code>users/{uid}</code> premium cloud entitlement record.</li>
+        <li><code>userGroups/{uid}</code> group membership references.</li>
+        <li>Hatim/group membership records.</li>
+        <li>Task progress created by the user.</li>
+        <li>Extra reading records created by the user.</li>
+        <li>Suspicious activity, admin alert, and audit records related to the user.</li>
+        <li><code>_userTrust/{uid}</code> trust/protection record.</li>
+      </ul>
+
+      <div class="warn">
+        Data deletion cannot be undone. If the user owns a group, that group may be closed and other members' access may be affected. Local counter history on the device is not deleted by this cloud deletion flow; local data can be removed by clearing app data or uninstalling the app.
+      </div>
+
+      <h2>If you cannot access the app</h2>
+      <p>If you cannot access the app, send a data deletion request to the email below. Include an invite code, group name, or nickname if available so records can be located.</p>
+      <p><a href="mailto:zelvoai@gmail.com">zelvoai@gmail.com</a></p>
+      <p>Manual requests are reviewed within 30 days.</p>
+    </div>
+  </div>
+</body>
+</html>
