@@ -55,7 +55,7 @@
     </ul>
 
     <h3>2.3 Anonim Global İstatistikler</h3>
-    <p>Hangi zikirlerin global olarak en çok çekildiğini görmek için Firebase Firestore'daki <code>_globalStats</code> koleksiyonuna anonim, toplu sayaç güncellemeleri gönderilir. Bu veriler kullanıcı kimliği, IP veya cihaz tanımlayıcı taşımaz; yalnızca "X zikirine bugün +N sayım eklendi" gibi toplu agregasyondur.</p>
+    <p>Zikir sayımları varsayılan olarak cihaz içinde yerel veritabanında tutulur. Uygulamanın mevcut sürümünde kullanıcı tarafından girilen zikir isimleri veya global toplu sayaç güncellemeleri uzak bir istatistik koleksiyonuna gönderilmez.</p>
 
     <h3>2.4 Grup Zikir / Hatim Özelliği (Bulut Verileri)</h3>
     <p>Bu özellik <strong>opsiyoneldir</strong>. Yalnızca bir grup oluşturduğunuzda veya bir gruba katıldığınızda aktive olur. Aşağıdaki veriler Firebase altyapısında işlenir:</p>
@@ -108,7 +108,7 @@
 
     <h2>5. Yaptığımız İşlemler — Kısa Açıklama</h2>
     <ul>
-      <li><strong>Sayım:</strong> Tap sayısı yerel veritabanına yazılır; her 10 tap'te bir anonim global istatistik sayacı güncellenir.</li>
+      <li><strong>Sayım:</strong> Tap sayısı yerel veritabanına yazılır ve cihaz içinde saklanır.</li>
       <li><strong>Hatim Grup oluşturma:</strong> Cloud Function ile transaction yapılır; grup ve davet kodu Firestore'a yazılır; anonim UID grup yöneticisi olarak işaretlenir.</li>
       <li><strong>Gruba katılma:</strong> Davet kodu Cloud Function üzerinden doğrulanır; takma adınız ve anonim UID üye olarak eklenir; grup kapasite kontrolü yapılır.</li>
       <li><strong>Görev tamamlama:</strong> Sayım sonucu Cloud Function'a iletilir; sayım hızı şüpheli görünürse görev "incelemeye" alınır ve grup yöneticisi onayı beklenir.</li>
@@ -133,7 +133,7 @@
       <li><strong>Uygulama içinden silme (önerilen):</strong> Ayarlar → Bulut verilerini sil — tek dokunuşla anonim hesabın ve tüm grup verilerin Firestore'dan kaldırılır.</li>
       <li><strong>E-posta ile silme talebi:</strong> <a href="mailto:zelvoai@gmail.com">zelvoai@gmail.com</a> adresine UID veya davet kodu bilgisi ile birlikte talep gönderebilirsiniz; 30 gün içinde silinir.</li>
       <li><strong>Analitik veriler:</strong> Firebase Analytics 14 ay sonra otomatik silinir. Crashlytics çökme verileri 90 gün saklanır.</li>
-      <li><strong>Global istatistikler:</strong> Kişiselleştirilemediği için süresiz tutulur (toplu agregasyon).</li>
+      <li><strong>Global istatistikler:</strong> Mevcut sürümde bu akış devre dışıdır.</li>
     </ul>
 
     <h2>8. Çocukların Gizliliği</h2>

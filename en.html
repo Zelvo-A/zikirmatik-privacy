@@ -55,7 +55,7 @@
     </ul>
 
     <h3>2.3 Anonymous Global Statistics</h3>
-    <p>To show which dhikr are most popular globally, anonymous aggregate counter updates are sent to the <code>_globalStats</code> collection in Firebase Firestore. This data does not carry user identity, IP, or device identifier; it is only aggregate counters like "X dhikr received +N count today".</p>
+    <p>Dhikr counts are stored locally on the device by default. In the current app version, user-entered dhikr names and global aggregate counter updates are not sent to a remote statistics collection.</p>
 
     <h3>2.4 Group Dhikr / Khatm Feature (Cloud Data)</h3>
     <p>This feature is <strong>optional</strong>. It is only activated when you create a group or join one. The following data is processed on Firebase infrastructure:</p>
@@ -108,7 +108,7 @@
 
     <h2>5. What We Do — Brief Description</h2>
     <ul>
-      <li><strong>Counting:</strong> Tap counts are written to the local database; every 10 taps, an anonymous global statistics counter is updated.</li>
+      <li><strong>Counting:</strong> Tap counts are written to the local database and stored on-device.</li>
       <li><strong>Creating a Khatm Group:</strong> A transaction runs through a Cloud Function; the group and invite code are written to Firestore; your anonymous UID is marked as the group admin.</li>
       <li><strong>Joining a group:</strong> The invite code is verified via Cloud Function; your nickname and anonymous UID are added as a member; group capacity is checked.</li>
       <li><strong>Completing a task:</strong> The counting result is sent to a Cloud Function; if the counting speed looks suspicious, the task is put under "review" and waits for admin approval.</li>
@@ -133,7 +133,7 @@
       <li><strong>In-app deletion (recommended):</strong> Settings → Delete cloud data — one tap removes your anonymous account and all group data from Firestore.</li>
       <li><strong>Deletion via email:</strong> You can send a request to <a href="mailto:zelvoai@gmail.com">zelvoai@gmail.com</a> with your UID or invite code; deletion will occur within 30 days.</li>
       <li><strong>Analytics data:</strong> Firebase Analytics is auto-deleted after 14 months. Crashlytics crash data is retained for 90 days.</li>
-      <li><strong>Global statistics:</strong> Stored indefinitely as they are not personally identifiable (aggregate only).</li>
+      <li><strong>Global statistics:</strong> This flow is currently disabled in the app version described here.</li>
     </ul>
 
     <h2>8. Children's Privacy</h2>
