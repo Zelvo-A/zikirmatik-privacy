@@ -26,7 +26,7 @@
 <body>
   <div class="container">
     <h1>Privacy Policy</h1>
-    <p class="meta">Last updated: May 17, 2026 · Effective date: May 17, 2026</p>
+    <p class="meta">Last updated: October 14, 2026 · Effective date: October 14, 2026</p>
 
     <div class="note">
       <strong>Summary:</strong> ZikirMatik Pro does not sell your personal data, does not collect your email/phone/real name, and does not require account creation. In standalone use, all your data stays on your device. When you use the Group Dhikr feature, only group-related data (nickname, group name, task counters) is processed securely on Firebase Firestore. Ad and crash telemetry is anonymous.
@@ -45,6 +45,9 @@
       <li>App settings: theme, language, font, sound/vibration preferences, daily hadith notification time</li>
       <li>Onboarding and privacy policy acceptance status</li>
       <li>Premium purchase local verification state (Play Billing token)</li>
+      <li><strong>App error reports:</strong> Error type and message, stack trace, app version, Android version and device model are sent to our server (Firebase); no identity or personal data is included.</li>
+      <li><strong>Daily activity:</strong> Once a day, an irreversible hash of the Firebase installation ID and the app version are sent (to count daily users); the raw ID is not stored.</li>
+      <li><strong>Android Google backup:</strong> If enabled on your phone, your dhikr, history and settings are backed up encrypted to your Google account; we cannot access this backup.</li>
     </ul>
 
     <h3>2.2 Anonymous Analytics &amp; Telemetry (Firebase)</h3>
@@ -133,6 +136,7 @@
       <li><strong>In-app deletion (recommended):</strong> Settings → Delete cloud data — one tap removes your anonymous account and all group data from Firestore.</li>
       <li><strong>Deletion via email:</strong> You can send a request to <a href="mailto:zelvoai@gmail.com">zelvoai@gmail.com</a> with your UID or invite code; deletion will occur within 30 days.</li>
       <li><strong>Analytics data:</strong> Firebase Analytics is auto-deleted after 14 months. Crashlytics crash data is retained for 90 days.</li>
+      <li><strong>Error reports and daily activity:</strong> Error records are kept for at most 180 days, daily activity markers for 3 days.</li>
       <li><strong>Global statistics:</strong> This flow is currently disabled in the app version described here.</li>
     </ul>
 
