@@ -26,7 +26,7 @@
 <body>
   <div class="container">
     <h1>Gizlilik Politikası</h1>
-    <p class="meta">Son güncelleme: 14 Ekim 2026 · Yürürlük tarihi: 14 Ekim 2026</p>
+    <p class="meta">Son güncelleme: 25 Ekim 2026 · Yürürlük tarihi: 25 Ekim 2026</p>
 
     <div class="note">
       <strong>Özet:</strong> ZikirMatik Pro kişisel verilerinizi satmaz, e-posta/telefon/gerçek ad toplamaz ve hesap oluşturmanızı gerektirmez. Tek başına kullanımda tüm verileriniz cihazınızda kalır. Grup Zikir özelliğini kullandığınızda yalnızca grup ile ilgili veriler (takma ad, grup adı, görev sayaçları) Firebase Firestore'da güvenli şekilde işlenir. Reklam ve kilitlenme telemetrisi anonimdir.
@@ -79,14 +79,15 @@
         <code>createHatimGroup</code>, <code>joinHatimGroupWithCode</code>, <code>assignTask</code>, <code>completeTask</code>, <code>approveTask</code>, <code>rotateJoinCode</code>, <code>addExtraReading</code>, <code>removeParticipant</code>, <code>updateGroupCapacity</code>, <code>boostGroupCapacityWithAd</code>, <code>leaveGroup</code>, <code>deleteGroup</code>.
         Bu işlemler dolandırıcılığı önlemek, kapasite/üyelik kurallarını uygulamak ve sayım manipülasyonlarını engellemek içindir.
       </li>
-      <li><strong>App Check (Play Integrity / SafetyNet):</strong> Sunucu çağrılarının gerçek bir cihazdan ve uygulamadan geldiğini doğrular; otomatik bot/spam girişlerini önler.</li>
+      <li><strong>App Check (Play Integrity / SafetyNet):</strong> Sunucu çağrılarının gerçek bir cihazdan ve uygulamadan gelip gelmediğini izler; bot/spam girişleri ayrıca oturum, kurallar ve istek sınırlarıyla önlenir.</li>
     </ul>
 
     <h3>2.5 Reklamlar (Google AdMob)</h3>
-    <p>Premium abone değilseniz banner reklamlar ve kapasiteyi artırmak için ödüllü reklamlar gösterilir.</p>
+    <p>Premium abone değilseniz banner reklamlar ve isteğe bağlı ödüllü reklamlar gösterilir.</p>
     <ul>
       <li>Google AdMob, kişiselleştirilmiş veya kişiselleştirilmemiş reklam göstermek için Android Reklam Kimliği'ni (AD_ID) ve oturum bilgilerini işleyebilir.</li>
       <li>AB / Birleşik Krallık / İsviçre kullanıcıları için UMP (User Messaging Platform) onay diyaloğu gösterilir.</li>
+      <li><strong>Ödüllü reklamlar (isteğe bağlı):</strong> Yalnızca siz seçerseniz gösterilir: Kur'an'da 5 ayetlik bölümün kilidini açmak için 2 kısa video (ikincisi siz dokununca başlar), alt banner reklamı 24 saat kapatmak için 1 video ve grup kapasitesini +5 artırmak için 1 video. Ödül yalnızca video sonuna kadar izlenince verilir.</li>
       <li>Onayınız olmadan kişiselleştirilmiş reklam gösterilmez.</li>
     </ul>
 
@@ -104,7 +105,6 @@
       <tr><td>POST_NOTIFICATIONS</td><td>Günlük hadis ve sayım bildirimleri</td><td>Hayır</td></tr>
       <tr><td>VIBRATE</td><td>Sayım sırasında dokunsal geri bildirim</td><td>Hayır</td></tr>
       <tr><td>RECEIVE_BOOT_COMPLETED</td><td>Cihaz yeniden başladıktan sonra bildirim zamanlamasını yeniden kurma</td><td>Hayır</td></tr>
-      <tr><td>SCHEDULE_EXACT_ALARM</td><td>Günlük hadis hatırlatıcısını tam zamanında tetikleme</td><td>Hayır</td></tr>
       <tr><td>com.android.vending.BILLING</td><td>Google Play üzerinden Premium satın alma</td><td>Hayır (Google Play yönetir)</td></tr>
       <tr><td>com.google.android.gms.permission.AD_ID</td><td>AdMob reklam kimliği erişimi</td><td>Evet (sadece AdMob'a)</td></tr>
     </table></div>
@@ -148,7 +148,7 @@
       <li>Firebase iletişimi TLS 1.2+ ile şifrelidir.</li>
       <li>Firestore Security Rules ile her üyenin yalnızca üyesi olduğu grupları okuyabildiği zorunlu kılınmıştır.</li>
       <li>Cloud Functions kritik işlemleri sunucu tarafında doğrular; Firestore'a doğrudan yazım büyük ölçüde kısıtlıdır.</li>
-      <li>App Check ile sahte istemciler engellenir.</li>
+      <li>App Check (Play Integrity) ile uygulamanın bütünlüğü izlenir; ayrıca her istek oturum kimliği, Firestore kuralları ve istek sınırlarıyla korunur.</li>
       <li>Premium kapasite artırma ve ödüllü reklam işlemleri rate limit + cooldown ile korunur.</li>
     </ul>
 

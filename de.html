@@ -25,7 +25,7 @@
 <body>
   <div class="container">
     <h1>Datenschutzrichtlinie</h1>
-    <p class="meta">Letzte Aktualisierung: 14. Oktober 2026 · Gültig ab: 14. Oktober 2026</p>
+    <p class="meta">Letzte Aktualisierung: 25. Oktober 2026 · Gültig ab: 25. Oktober 2026</p>
 
     <div class="note">
       <strong>Zusammenfassung:</strong> ZikirMatik Pro verkauft Ihre persönlichen Daten nicht, sammelt keine E-Mail/Telefon/Echtnamen und verlangt keine Kontoerstellung. In der Einzelnutzung bleiben alle Daten auf Ihrem Gerät. Bei Nutzung der Gruppen-Dhikr-Funktion werden nur Gruppendaten (Spitzname, Gruppenname, Aufgabenzähler) sicher auf Firebase Firestore verarbeitet. Anzeigen und Absturztelemetrie sind anonym.
@@ -64,7 +64,7 @@
       <li><strong>Firebase Authentication (anonym):</strong> Eine zufällige UID. Enthält keine E-Mail/Telefon/echten Namen.</li>
       <li><strong>Firestore (us-west1):</strong> Gruppentitel, Absicht, Einladungscode, Ihr Spitzname, Aufgabenfortschritt, Mitgliederliste, Audit-Log.</li>
       <li><strong>Cloud Functions:</strong> Kritische Operationen (Erstellen, Beitreten, Abschluss, Mitgliederverwaltung) laufen serverseitig.</li>
-      <li><strong>App Check:</strong> Verhindert gefälschte Clients und Bots.</li>
+      <li><strong>App Check:</strong> Überwacht, ob Serveraufrufe von einem echten Gerät und der echten App stammen; Bot-Zugriffe werden zusätzlich durch Anmeldung, Regeln und Anfragelimits verhindert.</li>
     </ul>
 
     <h3>2.5 Werbung (Google AdMob)</h3>
@@ -72,6 +72,7 @@
       <li>Ohne Premium-Abonnement werden Banner- und Belohnungsanzeigen angezeigt.</li>
       <li>AdMob kann AD_ID und Sitzungsinformationen verarbeiten.</li>
       <li>Für EWR/UK/Schweiz-Nutzer wird ein UMP-Einwilligungsdialog angezeigt.</li>
+      <li><strong>Prämienanzeigen (optional):</strong> Nur auf Ihren Wunsch: 2 kurze Videos, um einen Abschnitt von 5 Koranversen freizuschalten (das zweite startet erst nach Ihrem Tippen), 1 Video, um die Banneranzeige unten 24 Stunden lang auszublenden, und 1 Video, um die Gruppenkapazität um 5 zu erhöhen. Die Prämie wird nur gewährt, wenn das Video bis zum Ende angesehen wurde.</li>
       <li>Personalisierte Anzeigen werden ohne Ihre Einwilligung nicht angezeigt.</li>
     </ul>
 
@@ -89,7 +90,6 @@
       <tr><td>POST_NOTIFICATIONS</td><td>Tägliche Hadith-Benachrichtigungen</td><td>Nein</td></tr>
       <tr><td>VIBRATE</td><td>Haptisches Feedback</td><td>Nein</td></tr>
       <tr><td>RECEIVE_BOOT_COMPLETED</td><td>Erinnerungen nach Neustart</td><td>Nein</td></tr>
-      <tr><td>SCHEDULE_EXACT_ALARM</td><td>Tägliche Hadith-Erinnerung</td><td>Nein</td></tr>
       <tr><td>BILLING</td><td>Google Play Premium-Kauf</td><td>Nein</td></tr>
       <tr><td>AD_ID</td><td>AdMob Werbe-ID</td><td>Ja</td></tr>
     </table></div>
@@ -121,7 +121,7 @@
       <li>Firebase-Kommunikation ist TLS 1.2+ verschlüsselt.</li>
       <li>Firestore Security Rules erzwingen, dass jedes Mitglied nur seine Gruppen lesen kann.</li>
       <li>Cloud Functions verifizieren kritische Operationen serverseitig.</li>
-      <li>App Check verhindert gefälschte Clients.</li>
+      <li>App Check (Play Integrity) überwacht die Integrität der App; jede Anfrage ist zusätzlich durch die Anmeldeidentität, Firestore-Regeln und Anfragelimits geschützt.</li>
     </ul>
 
     <h2>9. Änderungen dieser Richtlinie</h2>

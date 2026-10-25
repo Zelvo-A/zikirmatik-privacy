@@ -25,7 +25,7 @@
 <body>
   <div class="container">
     <h1>Dasar Privasi</h1>
-    <p class="meta">Kemas kini terakhir: 14 Oktober 2026 · Tarikh kuat kuasa: 14 Oktober 2026</p>
+    <p class="meta">Kemas kini terakhir: 25 Oktober 2026 · Tarikh kuat kuasa: 25 Oktober 2026</p>
 
     <div class="note">
       <strong>Ringkasan:</strong> ZikirMatik Pro tidak menjual data peribadi anda, tidak mengumpul e-mel/telefon/nama sebenar, dan tidak memerlukan penciptaan akaun. Dalam penggunaan individu, semua data anda kekal pada peranti. Apabila menggunakan ciri Zikir Berkumpulan, hanya data kumpulan (nama samaran, nama kumpulan, pembilang) diproses dengan selamat pada Firebase Firestore. Telemetri iklan dan crash adalah tanpa nama.
@@ -45,7 +45,6 @@
       <tr><td>POST_NOTIFICATIONS</td><td>Peringatan hadis</td><td>Tidak</td></tr>
       <tr><td>VIBRATE</td><td>Maklum balas haptik</td><td>Tidak</td></tr>
       <tr><td>RECEIVE_BOOT_COMPLETED</td><td>Memulihkan peringatan</td><td>Tidak</td></tr>
-      <tr><td>SCHEDULE_EXACT_ALARM</td><td>Peringatan hadis</td><td>Tidak</td></tr>
       <tr><td>BILLING</td><td>Pembelian Premium</td><td>Tidak</td></tr>
       <tr><td>AD_ID</td><td>ID AdMob</td><td>Ya</td></tr>
     </table></div>
@@ -60,6 +59,8 @@
       <li><strong>Aktiviti harian:</strong> Sekali sehari, cincangan sehala ID pemasangan Firebase dan versi aplikasi dihantar (untuk mengira pengguna harian); ID asal tidak disimpan.</li>
       <li><strong>Sandaran Google Android:</strong> Jika dihidupkan pada telefon anda, zikir, sejarah dan tetapan anda disandarkan secara tersulit ke akaun Google anda; kami tidak boleh mengaksesnya.</li>
     </ul>
+
+    <p><strong>Iklan berganjaran (pilihan):</strong> Hanya jika anda memilihnya: 2 video pendek untuk membuka bahagian 5 ayat al-Quran (video kedua hanya bermula apabila anda mengetik), 1 video untuk menyembunyikan iklan sepanduk bawah selama 24 jam, dan 1 video untuk menambah kapasiti kumpulan sebanyak 5. Ganjaran hanya diberikan jika video ditonton hingga tamat.</p>
 
     <h2>5. Penyimpanan dan Hak Pemadaman</h2>
     <ul>
@@ -80,7 +81,7 @@
       <li>Komunikasi Firebase TLS 1.2+ disulitkan.</li>
       <li>Peraturan Firestore: setiap ahli hanya membaca kumpulannya.</li>
       <li>Cloud Functions mengesahkan operasi kritikal di pelayan.</li>
-      <li>App Check menghalang pelanggan palsu.</li>
+      <li>App Check (Play Integrity) memantau integriti aplikasi; setiap permintaan juga dilindungi oleh identiti log masuk, peraturan Firestore dan had kekerapan.</li>
     </ul>
 
     <h2>8. Perubahan Dasar</h2>

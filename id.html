@@ -25,7 +25,7 @@
 <body>
   <div class="container">
     <h1>Kebijakan Privasi</h1>
-    <p class="meta">Pembaruan terakhir: 14 Oktober 2026 · Berlaku: 14 Oktober 2026</p>
+    <p class="meta">Pembaruan terakhir: 25 Oktober 2026 · Berlaku: 25 Oktober 2026</p>
 
     <div class="note">
       <strong>Ringkasan:</strong> ZikirMatik Pro tidak menjual data pribadi Anda, tidak mengumpulkan email/telepon/nama asli, dan tidak memerlukan pembuatan akun. Dalam penggunaan mandiri, semua data Anda tersimpan di perangkat. Saat menggunakan fitur Dzikir Grup, hanya data grup (nama panggilan, nama grup, penghitung) yang diproses dengan aman di Firebase Firestore. Telemetri iklan dan crash bersifat anonim.
@@ -64,7 +64,7 @@
       <li><strong>Firebase Authentication (anonim):</strong> UID acak tanpa email/telepon/nama asli.</li>
       <li><strong>Firestore (us-west1):</strong> Nama grup, niat, kode undangan, nama panggilan Anda, progres tugas, daftar anggota, log audit.</li>
       <li><strong>Cloud Functions:</strong> Operasi kritis di server.</li>
-      <li><strong>App Check:</strong> Mencegah klien palsu.</li>
+      <li><strong>App Check:</strong> Memantau apakah panggilan server berasal dari perangkat dan aplikasi asli; akses otomatis juga dicegah dengan login, aturan, dan batas frekuensi.</li>
     </ul>
 
     <h3>2.5 Iklan (Google AdMob)</h3>
@@ -72,6 +72,7 @@
       <li>Tanpa langganan Premium, iklan banner dan berhadiah ditampilkan.</li>
       <li>AdMob dapat memproses AD_ID dan informasi sesi.</li>
       <li>Untuk pengguna EEA/UK/Swiss, dialog persetujuan UMP ditampilkan.</li>
+      <li><strong>Iklan berhadiah (opsional):</strong> Hanya jika Anda memilihnya: 2 video singkat untuk membuka bagian 5 ayat Al-Qur'an (video kedua baru diputar setelah Anda mengetuk), 1 video untuk menyembunyikan iklan banner bawah selama 24 jam, dan 1 video untuk menambah kapasitas grup sebanyak 5. Hadiah hanya diberikan jika video ditonton sampai selesai.</li>
       <li>Iklan personalisasi tidak ditampilkan tanpa persetujuan Anda.</li>
     </ul>
 
@@ -89,7 +90,6 @@
       <tr><td>POST_NOTIFICATIONS</td><td>Pengingat hadis</td><td>Tidak</td></tr>
       <tr><td>VIBRATE</td><td>Umpan balik haptik</td><td>Tidak</td></tr>
       <tr><td>RECEIVE_BOOT_COMPLETED</td><td>Memulihkan pengingat</td><td>Tidak</td></tr>
-      <tr><td>SCHEDULE_EXACT_ALARM</td><td>Pengingat hadis</td><td>Tidak</td></tr>
       <tr><td>BILLING</td><td>Pembelian Premium</td><td>Tidak</td></tr>
       <tr><td>AD_ID</td><td>ID AdMob</td><td>Ya</td></tr>
     </table></div>
@@ -121,7 +121,7 @@
       <li>Komunikasi Firebase TLS 1.2+ terenkripsi.</li>
       <li>Aturan Firestore: setiap anggota hanya membaca grupnya.</li>
       <li>Cloud Functions memverifikasi operasi kritis di server.</li>
-      <li>App Check mencegah klien palsu.</li>
+      <li>App Check (Play Integrity) memantau integritas aplikasi; setiap permintaan juga dilindungi oleh identitas masuk, aturan Firestore, dan batas frekuensi.</li>
     </ul>
 
     <h2>9. Perubahan Kebijakan</h2>

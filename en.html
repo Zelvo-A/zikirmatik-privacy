@@ -26,7 +26,7 @@
 <body>
   <div class="container">
     <h1>Privacy Policy</h1>
-    <p class="meta">Last updated: October 14, 2026 · Effective date: October 14, 2026</p>
+    <p class="meta">Last updated: October 25, 2026 · Effective date: October 25, 2026</p>
 
     <div class="note">
       <strong>Summary:</strong> ZikirMatik Pro does not sell your personal data, does not collect your email/phone/real name, and does not require account creation. In standalone use, all your data stays on your device. When you use the Group Dhikr feature, only group-related data (nickname, group name, task counters) is processed securely on Firebase Firestore. Ad and crash telemetry is anonymous.
@@ -79,14 +79,15 @@
         <code>createHatimGroup</code>, <code>joinHatimGroupWithCode</code>, <code>assignTask</code>, <code>completeTask</code>, <code>approveTask</code>, <code>rotateJoinCode</code>, <code>addExtraReading</code>, <code>removeParticipant</code>, <code>updateGroupCapacity</code>, <code>boostGroupCapacityWithAd</code>, <code>leaveGroup</code>, <code>deleteGroup</code>.
         They are used to prevent fraud, enforce capacity/membership rules, and block count manipulation.
       </li>
-      <li><strong>App Check (Play Integrity / SafetyNet):</strong> Verifies that server calls come from a real device and the genuine app; prevents automated bot/spam access.</li>
+      <li><strong>App Check (Play Integrity / SafetyNet):</strong> Monitors whether server calls come from a real device and the genuine app; bot/spam access is additionally prevented by sign-in, rules and rate limits.</li>
     </ul>
 
     <h3>2.5 Ads (Google AdMob)</h3>
-    <p>If you are not a Premium subscriber, banner ads and rewarded ads (for capacity boosting) are shown.</p>
+    <p>If you are not a Premium subscriber, banner ads and optional rewarded ads are shown.</p>
     <ul>
       <li>Google AdMob may process the Android Advertising ID (AD_ID) and session info to serve personalized or non-personalized ads.</li>
       <li>For EEA / UK / Swiss users, a UMP (User Messaging Platform) consent dialog is shown.</li>
+      <li><strong>Rewarded ads (optional):</strong> Shown only if you choose: 2 short videos to unlock a 5-verse section of the Quran (the second starts only when you tap), 1 video to hide the bottom banner ad for 24 hours, and 1 video to increase a group's capacity by 5. The reward is granted only after the video is watched to the end.</li>
       <li>Personalized ads are not shown without your consent.</li>
     </ul>
 
@@ -104,7 +105,6 @@
       <tr><td>POST_NOTIFICATIONS</td><td>Daily hadith and counting notifications</td><td>No</td></tr>
       <tr><td>VIBRATE</td><td>Haptic feedback while counting</td><td>No</td></tr>
       <tr><td>RECEIVE_BOOT_COMPLETED</td><td>Restore notification scheduling after device restart</td><td>No</td></tr>
-      <tr><td>SCHEDULE_EXACT_ALARM</td><td>Trigger the daily hadith reminder at the exact time</td><td>No</td></tr>
       <tr><td>com.android.vending.BILLING</td><td>Premium purchase via Google Play</td><td>No (managed by Google Play)</td></tr>
       <tr><td>com.google.android.gms.permission.AD_ID</td><td>AdMob ad ID access</td><td>Yes (to AdMob only)</td></tr>
     </table></div>
@@ -148,7 +148,7 @@
       <li>Firebase communications are TLS 1.2+ encrypted.</li>
       <li>Firestore Security Rules enforce that each member can only read groups they belong to.</li>
       <li>Cloud Functions verify critical operations server-side; direct writes to Firestore are largely restricted.</li>
-      <li>App Check prevents fake clients.</li>
+      <li>App Check (Play Integrity) monitors the app's integrity; every request is also protected by sign-in identity, Firestore rules and rate limits.</li>
       <li>Premium capacity boost and rewarded ad operations are protected with rate limiting + cooldown.</li>
     </ul>
 
