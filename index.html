@@ -96,7 +96,8 @@
 
     <h3>İmsak Vakti ve Konum (İsteğe Bağlı)</h3>
     <ul>
-      <li>Vakitler tamamen telefonunuzda hesaplanır. Konumunuz (yaklaşık koordinat veya seçtiğiniz şehir) hiçbir sunucuya gönderilmez; analitik ve hata raporlarına eklenmez, Google yedeğine dahil edilmez.</li>
+      <li>Konumunuz (yaklaşık koordinat veya seçtiğiniz şehir) yalnızca telefonunuzda kullanılır; hiçbir sunucuya gönderilmez, analitik ve hata raporlarına eklenmez, Google yedeğine dahil edilmez.</li>
+      <li>Türkiye'de vakitler Diyanet İşleri Başkanlığı'nın resmî ilçe cetvelinden alınır. Tüm Türkiye'nin cetveli yılda bir kez tek dosya olarak sunucumuzdan (Firebase) indirilir; bu istekte konum veya ilçe bilgisi gönderilmez, en yakın ilçe telefonunuzda bulunur. Diğer ülkelerde vakitler telefonda hesaplanır.</li>
       <li>Konum izni (yaklaşık konum) isteğe bağlıdır; vermezseniz listeden şehir seçebilirsiniz. İzni Android ayarlarından istediğiniz zaman kaldırabilirsiniz.</li>
       <li>Listede olmayan bir şehri aradığınızda yalnızca yazdığınız şehir adı Android'in konum arama hizmetine (Google) gönderilir; cihazınızın konumu gönderilmez.</li>
       <li>İmsak hatırlatıcısı isteğe bağlıdır ve cihazda zamanlanır; tam vaktinde gelmesi için “Alarmlar ve hatırlatıcılar” iznini Android ayarlarından verebilirsiniz.</li>
