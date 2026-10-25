@@ -94,6 +94,14 @@
     <h3>2.6 Satın Almalar (Google Play Billing)</h3>
     <p>Premium aboneliği Google Play Billing üzerinden işlenir. ZikirMatik kart numaranızı, ödeme bilgilerinizi <strong>görmez veya saklamaz</strong>. Satın alma sonucu (premium aktif/değil) Google Play'den alınan token ile doğrulanır. Hangi cihazın premium olduğu Firestore <code>users/{uid}/isPremium</code> alanında saklanır.</p>
 
+    <h3>İmsak Vakti ve Konum (İsteğe Bağlı)</h3>
+    <ul>
+      <li>Vakitler tamamen telefonunuzda hesaplanır. Konumunuz (yaklaşık koordinat veya seçtiğiniz şehir) hiçbir sunucuya gönderilmez; analitik ve hata raporlarına eklenmez, Google yedeğine dahil edilmez.</li>
+      <li>Konum izni (yaklaşık konum) isteğe bağlıdır; vermezseniz listeden şehir seçebilirsiniz. İzni Android ayarlarından istediğiniz zaman kaldırabilirsiniz.</li>
+      <li>Listede olmayan bir şehri aradığınızda yalnızca yazdığınız şehir adı Android'in konum arama hizmetine (Google) gönderilir; cihazınızın konumu gönderilmez.</li>
+      <li>İmsak hatırlatıcısı isteğe bağlıdır ve cihazda zamanlanır; tam vaktinde gelmesi için “Alarmlar ve hatırlatıcılar” iznini Android ayarlarından verebilirsiniz.</li>
+    </ul>
+
     <h2>3. Kamera Verisi (Sadece QR Tarama)</h2>
     <p>Davet kodu QR taramak istediğinizde kamera açılır. Kameradan alınan görüntü <strong>cihazda gerçek zamanlı işlenir, kaydedilmez ve dışarı gönderilmez</strong>. Yalnızca QR kod metni okunur.</p>
 
@@ -103,6 +111,8 @@
       <tr><td>INTERNET</td><td>Firebase, AdMob, Cloud Functions iletişimi</td><td>Evet (yukarıda belirtilen veriler)</td></tr>
       <tr><td>CAMERA</td><td>QR kod ile gruba katılma</td><td>Hayır</td></tr>
       <tr><td>POST_NOTIFICATIONS</td><td>Günlük hadis ve sayım bildirimleri</td><td>Hayır</td></tr>
+      <tr><td>ACCESS_COARSE_LOCATION</td><td>İmsak ve namaz vakitleri için yaklaşık konum (isteğe bağlı, yalnızca cihazda kullanılır)</td><td>Hayır</td></tr>
+      <tr><td>SCHEDULE_EXACT_ALARM</td><td>İmsak hatırlatıcısını tam vaktinde tetikleme (isteğe bağlı, Android ayarlarından verilir)</td><td>Hayır</td></tr>
       <tr><td>VIBRATE</td><td>Sayım sırasında dokunsal geri bildirim</td><td>Hayır</td></tr>
       <tr><td>RECEIVE_BOOT_COMPLETED</td><td>Cihaz yeniden başladıktan sonra bildirim zamanlamasını yeniden kurma</td><td>Hayır</td></tr>
       <tr><td>com.android.vending.BILLING</td><td>Google Play üzerinden Premium satın alma</td><td>Hayır (Google Play yönetir)</td></tr>

@@ -94,6 +94,14 @@
     <h3>2.6 Purchases (Google Play Billing)</h3>
     <p>Premium subscription is processed through Google Play Billing. ZikirMatik <strong>does not see or store</strong> your card number or payment information. The purchase outcome (premium active/not) is verified with a token received from Google Play. The premium status per device is stored in the <code>users/{uid}/isPremium</code> field in Firestore.</p>
 
+    <h3>Prayer Times and Location (Optional)</h3>
+    <ul>
+      <li>Times are calculated entirely on your phone. Your location (approximate coordinates or the city you choose) is never sent to any server, is not included in analytics or error reports, and is excluded from Google backup.</li>
+      <li>Location permission (approximate location) is optional; without it you can pick a city from the list. You can revoke it at any time in Android settings.</li>
+      <li>When you search for a city that is not on the list, only the city name you type is sent to Android's location search service (Google); your device's location is not sent.</li>
+      <li>The suhoor reminder is optional and scheduled on the device; you can allow “Alarms &amp; reminders” in Android settings so it arrives exactly on time.</li>
+    </ul>
+
     <h2>3. Camera Data (QR Scan Only)</h2>
     <p>The camera opens when you want to scan a QR invite code. The image from the camera is <strong>processed in real time on the device, not saved, and not sent outside</strong>. Only the text of the QR code is read.</p>
 
@@ -103,6 +111,8 @@
       <tr><td>INTERNET</td><td>Communication with Firebase, AdMob, Cloud Functions</td><td>Yes (data listed above)</td></tr>
       <tr><td>CAMERA</td><td>Joining a group via QR code</td><td>No</td></tr>
       <tr><td>POST_NOTIFICATIONS</td><td>Daily hadith and counting notifications</td><td>No</td></tr>
+      <tr><td>ACCESS_COARSE_LOCATION</td><td>Approximate location for prayer times (optional, used only on the device)</td><td>No</td></tr>
+      <tr><td>SCHEDULE_EXACT_ALARM</td><td>Triggering the suhoor reminder exactly on time (optional, granted in Android settings)</td><td>No</td></tr>
       <tr><td>VIBRATE</td><td>Haptic feedback while counting</td><td>No</td></tr>
       <tr><td>RECEIVE_BOOT_COMPLETED</td><td>Restore notification scheduling after device restart</td><td>No</td></tr>
       <tr><td>com.android.vending.BILLING</td><td>Premium purchase via Google Play</td><td>No (managed by Google Play)</td></tr>

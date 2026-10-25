@@ -79,6 +79,14 @@
     <h3>2.6 Käufe (Google Play Billing)</h3>
     <p>Premium-Abonnements werden über Google Play abgewickelt. ZikirMatik <strong>sieht oder speichert</strong> Ihre Kartennummer oder Zahlungsinformationen <strong>nicht</strong>.</p>
 
+    <h3>Gebetszeiten und Standort (optional)</h3>
+    <ul>
+      <li>Die Zeiten werden vollständig auf Ihrem Telefon berechnet. Ihr Standort (ungefähre Koordinaten oder die gewählte Stadt) wird an keinen Server gesendet, nicht in Analysen oder Fehlerberichte aufgenommen und nicht in die Google-Sicherung übernommen.</li>
+      <li>Die Standortberechtigung (ungefährer Standort) ist optional; ohne sie können Sie eine Stadt aus der Liste wählen. Sie können sie jederzeit in den Android-Einstellungen widerrufen.</li>
+      <li>Wenn Sie nach einer Stadt suchen, die nicht in der Liste steht, wird nur der eingegebene Stadtname an den Ortssuchdienst von Android (Google) gesendet, nicht der Standort Ihres Geräts.</li>
+      <li>Die Imsak-Erinnerung ist optional und wird auf dem Gerät geplant; damit sie pünktlich kommt, können Sie in den Android-Einstellungen „Wecker und Erinnerungen“ erlauben.</li>
+    </ul>
+
     <h2>3. Kameradaten (nur QR-Scan)</h2>
     <p>Die Kamera öffnet sich nur, wenn Sie einen QR-Einladungscode scannen. <strong>Das Bild wird in Echtzeit auf dem Gerät verarbeitet, nicht gespeichert und nicht nach außen gesendet</strong>.</p>
 
@@ -88,6 +96,8 @@
       <tr><td>INTERNET</td><td>Kommunikation mit Firebase, AdMob, Cloud Functions</td><td>Ja</td></tr>
       <tr><td>CAMERA</td><td>QR-Code-Beitritt</td><td>Nein</td></tr>
       <tr><td>POST_NOTIFICATIONS</td><td>Tägliche Hadith-Benachrichtigungen</td><td>Nein</td></tr>
+      <tr><td>ACCESS_COARSE_LOCATION</td><td>Ungefährer Standort für Gebetszeiten (optional, nur auf dem Gerät verwendet)</td><td>Nein</td></tr>
+      <tr><td>SCHEDULE_EXACT_ALARM</td><td>Pünktliches Auslösen der Imsak-Erinnerung (optional, in den Android-Einstellungen erteilt)</td><td>Nein</td></tr>
       <tr><td>VIBRATE</td><td>Haptisches Feedback</td><td>Nein</td></tr>
       <tr><td>RECEIVE_BOOT_COMPLETED</td><td>Erinnerungen nach Neustart</td><td>Nein</td></tr>
       <tr><td>BILLING</td><td>Google Play Premium-Kauf</td><td>Nein</td></tr>

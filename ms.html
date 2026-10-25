@@ -37,12 +37,22 @@
     <h2>2. Kamera (Imbasan QR Sahaja)</h2>
     <p>Kamera hanya dibuka untuk mengimbas QR. <strong>Imej diproses masa nyata, tidak disimpan, tidak dihantar</strong>.</p>
 
+    <h3>Waktu Solat dan Lokasi (Pilihan)</h3>
+    <ul>
+      <li>Waktu dikira sepenuhnya pada telefon anda. Lokasi anda (koordinat anggaran atau bandar yang dipilih) tidak dihantar ke mana-mana pelayan, tidak dimasukkan ke dalam analitik atau laporan ralat, dan dikecualikan daripada sandaran Google.</li>
+      <li>Kebenaran lokasi (lokasi anggaran) adalah pilihan; tanpanya anda boleh memilih bandar daripada senarai. Anda boleh menariknya balik bila-bila masa dalam tetapan Android.</li>
+      <li>Apabila anda mencari bandar yang tiada dalam senarai, hanya nama bandar yang anda taip dihantar ke perkhidmatan carian lokasi Android (Google); lokasi peranti anda tidak dihantar.</li>
+      <li>Peringatan sahur adalah pilihan dan dijadualkan pada peranti; anda boleh membenarkan “Penggera &amp; peringatan” dalam tetapan Android supaya ia tepat pada masanya.</li>
+    </ul>
+
     <h2>3. Kebenaran</h2>
     <div class="table-wrap"><table>
       <tr><th>Kebenaran</th><th>Tujuan</th><th>Keluar peranti?</th></tr>
       <tr><td>INTERNET</td><td>Komunikasi Firebase, AdMob, Cloud Functions</td><td>Ya</td></tr>
       <tr><td>CAMERA</td><td>Menyertai kumpulan melalui QR</td><td>Tidak</td></tr>
       <tr><td>POST_NOTIFICATIONS</td><td>Peringatan hadis</td><td>Tidak</td></tr>
+      <tr><td>ACCESS_COARSE_LOCATION</td><td>Lokasi anggaran untuk waktu solat (pilihan, hanya pada peranti)</td><td>Tidak</td></tr>
+      <tr><td>SCHEDULE_EXACT_ALARM</td><td>Mencetuskan peringatan sahur tepat pada masanya (pilihan, diberikan dalam tetapan Android)</td><td>Tidak</td></tr>
       <tr><td>VIBRATE</td><td>Maklum balas haptik</td><td>Tidak</td></tr>
       <tr><td>RECEIVE_BOOT_COMPLETED</td><td>Memulihkan peringatan</td><td>Tidak</td></tr>
       <tr><td>BILLING</td><td>Pembelian Premium</td><td>Tidak</td></tr>

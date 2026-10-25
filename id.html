@@ -79,6 +79,14 @@
     <h3>2.6 Pembelian (Google Play Billing)</h3>
     <p>Langganan Premium diproses melalui Google Play. ZikirMatik <strong>tidak melihat atau menyimpan</strong> nomor kartu atau informasi pembayaran.</p>
 
+    <h3>Jadwal Salat dan Lokasi (Opsional)</h3>
+    <ul>
+      <li>Jadwal dihitung sepenuhnya di ponsel Anda. Lokasi Anda (koordinat perkiraan atau kota yang dipilih) tidak pernah dikirim ke server mana pun, tidak dimasukkan ke analitik atau laporan error, dan tidak ikut dalam cadangan Google.</li>
+      <li>Izin lokasi (lokasi perkiraan) bersifat opsional; tanpanya Anda dapat memilih kota dari daftar. Anda dapat mencabutnya kapan saja di pengaturan Android.</li>
+      <li>Saat Anda mencari kota yang tidak ada di daftar, hanya nama kota yang Anda ketik yang dikirim ke layanan pencarian lokasi Android (Google); lokasi perangkat Anda tidak dikirim.</li>
+      <li>Pengingat sahur bersifat opsional dan dijadwalkan di perangkat; Anda dapat mengizinkan “Alarm &amp; pengingat” di pengaturan Android agar tepat waktu.</li>
+    </ul>
+
     <h2>3. Kamera (Hanya Pemindaian QR)</h2>
     <p>Kamera hanya terbuka untuk memindai QR. <strong>Gambar diproses real-time, tidak disimpan, tidak dikirim</strong>.</p>
 
@@ -88,6 +96,8 @@
       <tr><td>INTERNET</td><td>Komunikasi Firebase, AdMob, Cloud Functions</td><td>Ya</td></tr>
       <tr><td>CAMERA</td><td>Bergabung grup via QR</td><td>Tidak</td></tr>
       <tr><td>POST_NOTIFICATIONS</td><td>Pengingat hadis</td><td>Tidak</td></tr>
+      <tr><td>ACCESS_COARSE_LOCATION</td><td>Lokasi perkiraan untuk jadwal salat (opsional, hanya di perangkat)</td><td>Tidak</td></tr>
+      <tr><td>SCHEDULE_EXACT_ALARM</td><td>Memicu pengingat sahur tepat waktu (opsional, diberikan di pengaturan Android)</td><td>Tidak</td></tr>
       <tr><td>VIBRATE</td><td>Umpan balik haptik</td><td>Tidak</td></tr>
       <tr><td>RECEIVE_BOOT_COMPLETED</td><td>Memulihkan pengingat</td><td>Tidak</td></tr>
       <tr><td>BILLING</td><td>Pembelian Premium</td><td>Tidak</td></tr>
